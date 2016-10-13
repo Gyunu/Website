@@ -8,9 +8,9 @@ email::$services['zoho'] = function ($email) {
 	$mail = new PHPMailer;
 	$mail->isSMTP();
 
-	$mail->Host = ''
-	$mail->Username = ''
-	$mail->Password = ''
+	$mail->Host = '';
+	$mail->Username = '';
+	$mail->Password = '';
 
 	$mail->SMTPSecure = 'ssl';
 	$mail->port = 465;
