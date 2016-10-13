@@ -16,6 +16,8 @@ if(get('contact', false)) {
 			'subject' => 'Footer webform has been filled in',
 			'body'    => $message . 'from' . $name
 		]);
+
+		$mail->send();
 	}
 }
 
