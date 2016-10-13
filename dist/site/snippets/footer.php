@@ -7,15 +7,15 @@ if(get('contact', false)) {
 		$email_address = $contact['footer']['email'] || null;
 		$message = $contact['footer']['message'] || null;
 
+		//TODO fix zoho.
 		$mail = new Email([
-			'to' => 'dabstep17@gmail.com',
-			'body' => 'fuck you',
-			'from' => 'john@doe.com',
+			'to' => c::get('email.recipient'),
+			'body' => $message,
+			'from' => $email_address,
 			'service' => 'mail',
-			'subject' => 'Yay, Kirby sends mails',
-			'body'    => 'Hey, this is a test email!'
+			'subject' => 'Footer webform has been filled in',
+			'body'    => $message . 'from' . $name
 		]);
-
 	}
 }
 

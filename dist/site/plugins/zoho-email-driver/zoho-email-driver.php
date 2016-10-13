@@ -4,15 +4,13 @@
  * ZOHO mail driver for Kirby CMS
  */
 email::$services['zoho'] = function ($email) {
-	var_dump($email);
-	exit;
 	require_once(__DIR__ . DS . 'phpmailer' . DS .'class.phpmailer.php');
 	$mail = new PHPMailer;
 	$mail->isSMTP();
 
-	$mail->Host = 'smtp.zoho.com';
-	$mail->Username = 'hello@gyu.nu';
-	$mail->Password = 'Mab6lw12';
+	$mail->Host = ''
+	$mail->Username = ''
+	$mail->Password = ''
 
 	$mail->SMTPSecure = 'ssl';
 	$mail->port = 465;
@@ -28,7 +26,7 @@ email::$services['zoho'] = function ($email) {
 	$mail->Body = $email->body;
 
 	if (!$mail->send()) {
-		echo $mail->ErrorInfo;
-		throw new Error('PHPMailer error: ' . $mail->ErrorInfo);
+		var_dump($mail->ErrorInfo);
+		//throw new Error('PHPMailer error: ' . $mail->ErrorInfo);
 	}
 };
