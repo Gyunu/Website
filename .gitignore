@@ -1,7 +1,6 @@
 TODO.md
 dist/thumbs/*
-dist/assets/js/*
-dist/assets/css/*
+dist/assets/*
 dist/site/cache/*
 dist/site/config/*
 dist/site/accounts/*
