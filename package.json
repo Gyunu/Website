@@ -13,7 +13,7 @@
 		"build:font": "cp -r src/fonts/* dist/assets/fonts/",
 		"deploy:css": "rm -rf dist/assets/css/* && node-sass src/sass/index.scss dist/assets/css/min.css",
 		"deploy:js": "npm run lint:js && rm -rf src/js/ && rm -rf dist/assets/js/* && webpack --config webpack.deploy.js",
-		"deploy:img": "rm -rf dist/assets/img/* && cp -r src/fonts/* dist/assets/img/",
+		"deploy:img": "rm -rf dist/assets/img/* && cp -r src/img/* dist/assets/img/",
 		"deploy:font": "rm -rf dist/asset/fonts/* && cp -r src/fonts/* dist/assets/fonts",
     "live-reload": "./node_modules/.bin/webpack-dev-server --content-base './dist'",
     "watch": "parallelshell 'npm run -s build:js -- -w' 'npm run -s build:css -- -w' 'npm run live-reload'",
