@@ -3,21 +3,19 @@
 if(get('contact', false)) {
 	$contact = get('contact');
 	if(isset($contact['footer'])) {
-		$name = $contact['footer']['name'] || null;
-		$email_address = $contact['footer']['email'] || null;
-		$message = $contact['footer']['message'] || null;
-
+		$name = $contact['footer']['name'];
+		$email_address = $contact['footer']['email'];
+		$message = $contact['footer']['message'];
 		//TODO fix zoho.
 		$mail = new Email([
 			'to' => c::get('email.recipient'),
-			'body' => $message,
-			'from' => $email_address,
-			'service' => 'mail',
-			'subject' => 'Footer webform has been filled in',
-			'body'    => $message . 'from' . $name
+			'from' => 'hello@gyu.nu',
+			'subject' => $name . ' has contacted you',
+			'body'    => $message . ' ' . $email_address,
+			'service' => 'mail'
 		]);
 
-		$mail->send();
+		if($mail->send()) {}
 	}
 }
 

@@ -4,13 +4,13 @@
  * ZOHO mail driver for Kirby CMS
  */
 email::$services['zoho'] = function ($email) {
-	require_once(__DIR__ . DS . 'phpmailer' . DS .'class.phpmailer.php');
+	require_once(__DIR__ . DS . 'phpmailer' . DS .'PHPMailerAutoload.php');
 	$mail = new PHPMailer;
 	$mail->isSMTP();
 
-	$mail->Host = '';
-	$mail->Username = '';
-	$mail->Password = '';
+	$mail->Host = c::get('email.host');
+	$mail->Username = c::get('email.username');
+	$mail->Password = c::get('email.password');
 
 	$mail->SMTPSecure = 'ssl';
 	$mail->port = 465;
