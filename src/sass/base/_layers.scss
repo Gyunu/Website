@@ -1,0 +1,6 @@
+@for $layer from 1 through $layers {
+	.index-#{$layer} {
+		position: relative;
+		z-index: $layer;
+	}
+}

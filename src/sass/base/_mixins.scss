@@ -1,0 +1,143 @@
+////
+/// This is the sass mixins file.
+/// It contains all the mixins used.
+/// @author David Allen
+/// @since v1.0.0
+////
+
+/// This will output a margin rule that corresponds to the size and position passed
+/// @param {string} $position - The position of the margin, based on the $positions map
+/// @param {string} $size - The size of the margin, based on the $sizes map
+/// @example
+///  m('v', 'xl') ->
+///  margin-top: 2em;
+///  margin-bottom: 2em;
+@mixin m($position, $size) {
+	$p: positions('margin', $position);
+	@if(type-of($p) == 'map') {
+		#{map-get($p, '1'))}: #{map-get($sizes, $size)};
+		#{map-get($p, '2'))}: #{map-get($sizes, $size)};
+	}
+	@if(type-of($p) == 'string') {
+
+		#{$p}: #{map-get($sizes, $size)}
+	}
+
+}
+
+
+/// This will output a padding rule that corresponds to the size and position passed
+/// @param {string} $position - The position of the padding, based on the $positions map
+/// @param {string} $size - The size of the padding, based on the $sizes map
+/// @example
+///  p('v', 'xl') ->
+///  padding-top: 2em;
+///  padding-bottom: 2em;
+@mixin p($position, $size) {
+	$p: positions('padding', $position);
+	@if(type-of($p) == 'map') {
+		#{map-get($p, '1'))}: #{map-get($sizes, $size)};
+		#{map-get($p, '2'))}: #{map-get($sizes, $size)};
+	}
+	@if(type-of($p) == 'string') {
+		#{$p}: #{map-get($sizes, $size)}
+	}
+}
+
+
+/// Use to get a font size that corresponds to an otion in the $sizes map
+/// @param {string} $size - A string that matches a key in the $sizes map
+/// @example
+///  text('xl') ->
+///  font-size: 2em;
+@mixin text($size) {
+	font-size: #{map-get($sizes, $size)};
+}
+
+
+/// Use to get a font that corresponds to an otion in the $fonts map
+/// @param {string} $name - A string that matches a key in the $fonts map
+/// @example
+///  text('regular') ->
+///  font-family: 'rotis-sans-regular';
+@mixin font($name) {
+	font-family: #{map-get($fonts, $name)};
+}
+
+
+/// Use to get a font color that corresponds to an otion in the $colors map
+/// @param {string} $color - A string that matches a key in the $colors map
+/// @example
+///  text('green') ->
+///  color: green;
+@mixin clr($color) {
+		color: #{map-get($colors, $color)};
+}
+
+
+/// Use to get a background color that corresponds to an otion in the $colors map
+/// @param {string} $color - A string that matches a key in the $colors map
+/// @example
+///  bg('green') ->
+///  background-color: green;
+@mixin bg($color) {
+	background-color: #{map-get($colors, $color)};
+}
+
+
+/// Use to get a border color that corresponds to an otion in the $colors map
+/// @param {string} $color - A string that matches a key in the $colors map
+/// @example
+///  bdr('t', 'green') ->
+///  border-top: 1px solid green
+@mixin bdr($position, $color) {
+	$p: positions('border', $position);
+	@if(type-of($p) == 'map') {
+		#{map-get($p, '1')}: 1px solid #{map-get($colors, $color)};
+		#{map-get($p, '1')}: 1px solid #{map-get($colors, $color)};
+	}
+	@if(type-of($p) == 'string') {
+		#{$p}: 1px solid #{map-get($colors, $color)};
+	}
+
+}
+
+/// Generates a width based on how many columns the element should span
+/// @param {integer} $number - The column span
+/// @example
+///  col(1) ->
+///  width: 8.1666%;
+/// @todo Is this a good idea?
+@mixin col($number) {
+	width: $column-width * $number * 1%;
+}
+
+@mixin rad($position, $size) {
+	$p: positions('border-radius', $position);
+	@if(type-of($p) == 'map') {
+		#{map-get($p, '1'))}: #{map-get($sizes, $size)};
+		#{map-get($p, '2'))}: #{map-get($sizes, $size)};
+	}
+	@if(type-of($p) == 'string') {
+		#{$p}: #{map-get($sizes, $size)}
+	}
+}
+
+
+/// Generates a media query
+/// @param {integer} $breakpoint - The breakpoint size corresponding to the $media map
+/// @example
+///   media('xs') {
+///    display: block
+///   } ->
+///   @media all and (min-width: 0em) { display: block }
+@mixin media($breakpoint) {
+	@media all and (min-width: #{map-get($media, $breakpoint)}) {
+		@content;
+	}
+}
+
+//unnessecary
+@mixin layer($index) {
+	z-index: $index;
+}

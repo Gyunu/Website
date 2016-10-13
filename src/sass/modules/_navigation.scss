@@ -1,0 +1,63 @@
+.navigation {
+	@include bg('black');
+	@include clr('white');
+	@include col($columns);
+	@include bdr('b', 'black-lighter');
+	position: fixed;
+	top: 0;
+	left: 0;
+	&__logo {
+		@include m('b', 'n');
+		@include p('u', 'n');
+		img {
+			@include p('u', 's');
+		}
+		h1 {
+			@include text('l');
+			@include m('t', 's');
+		}
+		@include media('xs') {
+			display: none;
+		};
+		@include media('s') {
+			display: block;
+		};
+	}
+
+	&__list {
+		@include m('u', 'n');
+		@include p('u', 'n');
+	}
+
+	&__page {
+		@include p('t', 'l');
+		@include p('b', 'm');
+		@include p('h', 'xl');
+		@include m('u', 'n');
+		@include clr('white');
+
+		list-style-type: none;
+		float: left;
+
+		&:before {
+			display: none;
+			content: '';
+			width: 0;
+			min-width: 0;
+			@include m('u', 'n');
+		}
+
+		&:hover {
+			@include bg('white');
+			@include clr('black');
+		}
+
+	}
+
+	&__link {
+		color: inherit;
+		&:before {
+			display: none;
+		}
+	}
+}

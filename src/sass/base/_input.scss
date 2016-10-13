@@ -1,0 +1,150 @@
+fieldset {
+	@include m('v', 'xl');
+	@include p('u', 'm');
+}
+
+legend {
+	@include p('h', 'l');
+	font-weight: 700;
+}
+
+label {
+	@include text('s');
+	@include m('b', 'm');
+	font-weight: 700;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+input[type="number"],
+input[type="url"],
+input[type="email"],
+input[type="website"],
+input[type="color"],
+input[type="tel"] {
+	@include p('u', 's');
+	@include m('t', 'xs');
+	@include m('b', 'm');
+	@include col($columns);
+	@include text('m');
+	@include clr('black');
+	@extend .block;
+	font-weight: 300;
+
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	display:none;
+
+}
+
+input[type="checkbox"] {
+	& + span {
+		width: 15px;
+		height: 15px;
+		@include bg('f');
+		@include bdr('u', 'grey');
+		@include p('u', 's');
+		@include m('t', 'xs');
+		-webkit-appearance: textfield;
+		position: relative;
+		display: block;
+		&:before {
+			@include text('m');
+			@include clr('white');
+			@extend .ion-checkmark-round;
+			position: absolute;
+			top: 2px;
+			left: 3px;
+			right: 0;
+			opacity: 0.3;
+		}
+	}
+
+	&:checked {
+		& + span {
+			&:before {
+				@include text('m');
+				@include clr('black');
+				@extend .ion-checkmark-round;
+				position: absolute;
+				top: 2px;
+				left: 3px;
+				right: 0;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+input[type="radio"] {
+	& + span {
+		width: 15px;
+		height: 15px;
+		@include bg('f');
+		@include bdr('u', 'grey');
+		@include p('u', 's');
+		@include m('t', 'xs');
+		@include rad('u', 'xl');
+		position: relative;
+		display: block;
+		&:before {
+			@include text('s');
+			@include clr('white');
+			@extend .ion-record;
+			position: absolute;
+			top: 2px;
+			left: 3px;
+			right: 0;
+			opacity: 0.3;
+		}
+	}
+
+	&:checked {
+		& + span {
+			&:before {
+				@include text('s');
+				@include clr('black');
+				@extend .ion-record;
+				position: absolute;
+				top: 5px;
+				left: 6px;
+				right: 0;
+				opacity: 1;
+			}
+		}
+	}
+}
+
+textarea {
+	@include p('u', 's');
+	@include m('t', 'xs');
+	@include m('b', 'm');
+	@include col($columns);
+	@include text('m');
+	@include clr('black');
+	@extend .block;
+	-webkit-appearance: textfield;
+	min-height: 300px;
+	font-weight: 300;
+	resize: vertical;
+}
+
+input[type="color"] {
+	@include bg('f');
+	@include bdr('u', 'grey');
+	@include p('u', 'n');
+	@include m('u', 'n');
+	height: 0;
+	visibility: hidden;
+	& + span {
+		@include p('u', 'm');
+		@include col($columns);
+		@include bdr('u', 'grey');
+		@include text('l');
+		@extend .block;
+		@extend .ion-paintbucket;
+	}
+}

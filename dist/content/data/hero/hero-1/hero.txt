@@ -1,0 +1,15 @@
+title: Hero 1
+----
+header: Full Stack Engineer, Shibuya Tokyo
+----
+subheader: Front and Back end development specialist
+----
+button: 1
+----
+button_text: Get in touch
+----
+button_link: /contact
+----
+page: index
+----
+order: 1

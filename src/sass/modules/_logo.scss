@@ -1,0 +1,62 @@
+.logo {
+	@include m('b', 'xl');
+	display  : block;
+	min-width: 125px;
+
+	img {
+		float       : left;
+		min-width: 40px;
+		max-width: 60px;
+		width: 60px;
+		margin-right: 10px;
+	}
+
+	h1 {
+		@include m('u', 'n');
+		@include font('light');
+		@include text('xl');
+		@include clr('white');
+		float      : left;
+		font-weight: 100;
+		line-height: 1.8;
+	}
+
+	&--sticky {
+		@include p('u', 'm');
+		@include layer($layers);
+		@include bg('black');
+		position: fixed;
+		top: 0;
+
+		img {
+			width: 40px;
+		}
+
+		h1 {
+			@include text('l');
+		}
+
+		.menu {
+			@include m('t', 'xxxl');
+			@extend .block;
+			clear: both;
+			&__link {
+				@include clr('white');
+				@include p('u', 's');
+				@include bdr('u', 'none');
+				@extend .block;
+
+				text-decoration: none;
+				&:before {
+					display: none;
+				}
+				&:hover {
+					@include bdr('u', 'grey');
+				}
+				&:last-child {
+					@include m('b', 'n');
+				}
+			}
+		}
+	}
+}

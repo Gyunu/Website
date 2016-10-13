@@ -1,0 +1,69 @@
+.btn {
+	@include p('v', 'm');
+	@include p('h', 'l');
+	@include m('b', 'xl');
+	@include bg('black-lighter');
+	@include clr('white');
+	@include bdr('n', 'transparent');
+	height         : 60px;
+	display        : inline-block;
+	line-height    : 2;
+	vertical-align : middle;
+	text-decoration: none;
+
+	&:before {
+		@include m('u', 'n');
+		width  : 0;
+		content: '';
+	}
+
+	&:hover {
+		@include bg('black');
+	}
+
+	.ion {
+		@include m('r', 'm');
+	}
+
+	&--outline {
+		@include bg('none');
+		@include clr('white');
+		@include bdr('u', 'white');
+
+		&:hover {
+			@include bg('white');
+			@include clr('black');
+		}
+	}
+
+	&--inverse {
+		@include bg('white');
+		@include clr('black');
+		@include bdr('u', 'none');
+
+		&:hover {
+			@include bg('black');
+			@include clr('white');
+		}
+	}
+
+	&--light {
+		@include bg('white');
+		@include clr('black');
+
+		&:hover {
+			@include bg('black-lightest');
+		}
+
+		&.btn--inverse {
+			@include bg('black');
+			@include clr('white');
+			@include bdr('u', 'white');
+
+			&:hover {
+				@include bg('white');
+				@include clr('black');
+			}
+		}
+	}
+}

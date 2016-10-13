@@ -1,0 +1,27 @@
+.hero {
+	@include bg('green');
+	@include p('h', 'xl');
+	background-image: url('/img/grass-1.jpg');
+	padding-top: 40vh;
+	display          : block;
+	height           : 100vh;
+	width            : 100%;
+	position         : relative;
+	text-align: center;
+
+	&__text {
+		@include text('xxl');
+		@include clr('white');
+		@include font('light');
+	}
+
+	&__leader {
+		@include clr('white');
+		@include font('light');
+		max-width: 100%;
+	}
+
+	&__cta {
+
+	}
+}

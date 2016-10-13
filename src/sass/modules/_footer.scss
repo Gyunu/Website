@@ -1,0 +1,44 @@
+.footer {
+	@include bg('black');
+	@include clr('white');
+	@include p('h', 'xl');
+	@include p('t', 'xxl');
+
+	.col {
+		@include m('b', 'xl');
+	}
+
+	&__email {
+		@include clr('white');
+		&:before {
+			display: none;
+		}
+	}
+
+	&__form {
+		fieldset {
+			@include m('t', 'n');
+		}
+		textarea {
+			min-height: 0;
+		}
+	}
+
+	&__feed {
+
+	}
+
+	&__article {
+		a {
+			&:before {
+				display: none;
+			}
+		}
+	}
+
+	&__copyright {
+		@include p('v', 'l');
+		@include bdr('t', 'white');
+		clear: both;
+	}
+}

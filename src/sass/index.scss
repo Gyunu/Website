@@ -1,0 +1,35 @@
+////
+/// Index.scss
+/// This is the main index file which consolidates all the includes
+/// @author David Allen
+/// @since v1.0.0
+////
+
+// @import url("//hello.myfonts.net/count/323d34");
+@import "./config";
+@import "./base/_functions";
+@import "./base/_mixins";
+@import "./icons/ionicons";
+@import "./base/_reset";
+@import "./base/_clearfix";
+@import "./base/_layout";
+@import "./base/_layers";
+@import "./base/_grid";
+@import "./base/_fonts";
+@import "./base/_typography";
+@import "./base/_color";
+@import "./base/_image";
+@import "./base/_lists";
+@import "./base/_meter";
+@import "./base/_progress";
+@import "./base/_input";
+@import "./base/_buttons";
+@import "./modules/_logo";
+@import "./modules/_hero";
+@import "./modules/_footer";
+@import "./modules/_navigation";
+
+* {
+	box-sizing: border-box;
+	@extend .cf;
+}

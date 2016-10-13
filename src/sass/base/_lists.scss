@@ -1,0 +1,102 @@
+ol {
+	@include m('t', 'n');
+	@include m('b', 'l');
+	@include p('u', 'n');
+	list-style   : none;
+	counter-reset: ol;
+
+	&.roman li {
+		&:before {
+			content          : counter(ol, upper-roman);
+			counter-increment: ol;
+		}
+	}
+
+	&.katakana li {
+		&:before {
+			content          : counter(ol, katakana);
+			counter-increment: ol;
+		}
+	}
+
+	&.hiragana li {
+		&:before {
+			content          : counter(ol, hiragana);
+			counter-increment: ol;
+		}
+	}
+
+	&.kanji li {
+		&:before {
+			content          : counter(ol, cjk-ideographic);
+			counter-increment: ol;
+		}
+	}
+
+	li {
+		@include m('v', 's');
+		list-style-position: inside;
+
+		&:before {
+			@include m('r', 'm');
+			@extend .inline-block !optional;
+			content          : counter(ol, decimal);
+			counter-increment: ol;
+			min-width        : 20px;
+			font-weight      : 700;
+		}
+	}
+}
+
+ul {
+	@include m('t', 'n');
+	@include m('b', 'l');
+	@include p('u', 'n');
+	list-style   : none;
+	counter-reset: ul;
+
+	li {
+		@include m('v', 's');
+		list-style-position: inside;
+
+		&:before {
+			@include m('r', 'm');
+			@extend .inline-block !optional;
+			content          : counter(ul, disc);
+			counter-increment: ul;
+			min-width        : 20px;
+			font-weight      : 700;
+		}
+	}
+}
+
+dl {
+	@include m('t', 'n');
+	@include m('b', 'l');
+	@include p('u', 'n');
+
+	dt {
+		@include m('v', 's');
+		font-weight: 700;
+		@extend .inline-block !optional;
+	}
+
+	dd + dt dd + dt {
+		@include m('t', 'l');
+		@extend .block !optional;
+	}
+
+	dt + dt {
+		@extend .inline-block !optional;
+
+		&:after {
+			content: ',';
+		}
+	}
+
+	dd {
+		@include m('l', 'n');
+		@include m('m', 't');
+		@include m('b', 's');
+	}
+}

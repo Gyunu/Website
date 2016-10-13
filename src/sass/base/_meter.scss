@@ -1,0 +1,25 @@
+meter {
+	@include col($columns);
+	height: $baseline;
+}
+
+meter::-webkit-meter-bar {
+  background: none;
+	@include bg('black-lighter');
+	background-image: $linear-gradient;
+}
+
+meter::-webkit-meter-optimum-value {
+	background: none;
+	@include bg('green');
+}
+
+meter::-webkit-meter-suboptimum-value {
+	background: none;
+	@include bg('yellow');
+}
+
+meter::-webkit-meter-even-less-good-value {
+	background: none;
+	@include bg('red');
+}

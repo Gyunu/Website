@@ -1,0 +1,89 @@
+////
+/// This is the Layout file
+/// It holds all the rules to do with positioning and layouts
+/// @author David Allen
+/// @since v1.0.0
+////
+
+
+/// This generates the utility classes .p and .m
+/// These classes can be used in the html file where needed to change the padding [.p] and margin [.m]
+/// @example
+///  .m-u-xl = universal margin at xl size
+///  .p-l-s = left padding at s size
+@each $position-letter, $position-name in $positions {
+	@if(type-of($position-name) == 'string') {
+		.p-#{$position-letter} {
+			$p: positions('padding', $position-letter);
+
+			@if($position-letter == 'n') {
+				#{$p}: #{map-get($sizes, $position-letter)}
+			}
+			@else {
+				@each $size-letter, $size in $sizes {
+					&-#{$size-letter} {
+						#{$p}: #{$size}
+					}
+				}
+			}
+		}
+		.m-#{$position-letter} {
+			$p: positions('margin', $position-letter);
+
+			@if($position-letter == 'n') {
+				#{$p}: #{map-get($sizes, $position-letter)}
+			}
+			@else {
+				@each $size-letter, $size in $sizes {
+					&-#{$size-letter} {
+						#{$p}: #{$size}
+					}
+				}
+			}
+		}
+	}
+	@if(type-of($position-name) == 'map') {
+		.m-#{$position-letter} {
+			@each $size-letter, $size in $sizes {
+				&-#{$size-letter} {
+					$p1: positions('margin', map-get($position-name, '1'));
+					$p2: positions('margin', map-get($position-name, '2'));
+					#{$p1}: #{$size};
+					#{$p2}: #{$size};
+				}
+			}
+		}
+		.p-#{$position-letter} {
+			@each $size-letter, $size in $sizes {
+				&-#{$size-letter} {
+					$p1: positions('padding', map-get($position-name, '1'));
+					$p2: positions('padding', map-get($position-name, '2'));
+					#{$p1}: #{$size};
+					#{$p2}: #{$size};
+				}
+			}
+		}
+	}
+}
+
+
+.block {
+	display: block!important;
+}
+//display as inline block
+
+.inline-block {
+	display: inline-block!important;
+}
+//display as inline
+
+.inline {
+	display: inline-block!important;
+}
+//center
+
+.c {
+	display: block;
+	margin-left : auto !important;
+	margin-right: auto !important;
+}

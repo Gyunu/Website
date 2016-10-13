@@ -1,0 +1,202 @@
+////
+/// This is the Typography file
+/// It holds all the rules to do with type
+/// @author David Allen
+/// @since v1.0.0
+////
+
+* {
+	box-sizing: border-box;
+}
+
+/// This generates the utility class .text-{size}.
+/// These classes can be used in the html file where needed to change the font-size
+/// @example
+///  .text--xxl
+@each $size-letter, $size in $sizes {
+	.text-#{$size-letter} {
+		font-size: $size;
+	}
+}
+
+body,
+html {
+	@include font('regular');
+	@include clr('black');
+	@include bg('white');
+	font-size             : 100%; //16pts
+	letter-spacing        : 0.01em;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1 {
+	@include text('xxl');
+	@include m('t', 'n');
+	@include m('b', 'm');
+	font-weight: 700;
+
+	&.light {
+		@include font('light');
+		font-weight: 100;
+	}
+}
+
+h2 {
+	@include text('xl');
+	@include m('t', 'n');
+	@include m('b', 'm');
+	font-weight: 700;
+
+	&.light {
+		@include font('light');
+		font-weight: 100;
+	}
+}
+
+h3 {
+	@include text('l');
+	@include m('t', 'n');
+	@include m('b', 'l');
+	font-weight: 700;
+
+	&.light {
+		@include font('light');
+		font-weight: 100;
+	}
+}
+
+h4 {
+	@include text('l');
+	@include m('t', 'n');
+	@include m('b', 'xxl');
+	@extend .max-width;
+	@include font('light');
+	font-weight: 100;
+}
+
+p {
+	@extend .max-width;
+	word-break : break-word;
+	line-height: 1.4em;
+
+	&.leader {
+		@include text('l');
+	}
+	a {
+		display: inline-block;
+	}
+}
+
+strong, em, mark, ins, del {
+	display: inline-block;
+}
+//inline images
+
+.text {
+	img {
+		@include m('v', 'l');
+		@extend .max-width;
+	}
+}
+
+figure {
+	@include m('h', 'n');
+	@include m('v', 'xl');
+	@extend .max-width;
+}
+
+figcaption {
+	@include clr('black-lighter');
+	@include text('l');
+	font-style: italic;
+}
+
+ins {
+	@include bg('green');
+	@include p('h', 'xs');
+	text-decoration: none;
+
+	&[cite]:after {
+		@include m('l', 'xs');
+		@include p('r', 'xs');
+		@include text('xs');
+		@extend .inline-block !optional;
+		line-height: 0;
+		text-decoration: none;
+		content        : ' (' attr(cite) ' at ' attr(datetime) ')';
+	}
+}
+
+del {
+	@include bg('red');
+	@include p('h', 'xs');
+	text-decoration: none;
+
+	&[cite]:after {
+		@include m('l', 'xs');
+		@include p('r', 'xs');
+		@include text('xs');
+		@extend .inline-block !optional;
+		line-height: 0;
+		text-decoration: none;
+		content        : ' (' attr(cite) ' at ' attr(datetime) ')';
+	}
+}
+
+a {
+	@include clr('black');
+
+	&:before {
+		@extend .ion !optional;
+		@extend .ion-link !optional;
+		margin        : 0 5px;
+		transform     : rotate(-20deg);
+		vertical-align: middle;
+	}
+
+	&.leader {
+		@include text('l');
+		@include m('v', 'xxl');
+		@extend .block !optional;
+	}
+}
+
+mark {
+	@include p('h', 'xs');
+	@include bg('green');
+	@include clr('black-lighter');
+}
+
+time {
+	display: inline-block;
+}
+
+.t-c {
+	text-align: center;
+}
+
+.t-l {
+	text-align: left;
+}
+
+.t-r {
+	text-align: right;
+}
+
+//extend only, unless you really want it...
+
+.max-width {
+	max-width: 590px;
+	//centers the max width items
+	.t-c & {
+		@extend .c !optional;
+	}
+}
+
+.faded {
+	@include clr('black-lightest');
+
+	& mark {
+		@include bg('green-lightest');
+	}
+}

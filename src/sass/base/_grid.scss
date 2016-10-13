@@ -1,0 +1,28 @@
+.col {
+	padding-left: $gutter;
+	padding-right: $gutter;
+	float: left;
+
+	&--no-gutter {
+		@include p('h', 'n');
+	}
+}
+
+/// Generates the grid system for adding to the html file
+/// @example
+/// .xs-12 will generate a column that spans all 12 column widths from 0em upwards
+/// the styles cascade upwards, so you can define the smallest breakpoint needed and it will
+/// be the same on the screen size and any bigger.
+/// example mark up: <div class="xs-12 m-6 l-3 xl-2"></div>
+/// would appear full width on smaller phones, 2 columns on medium phones and tablets, 4 columns on desktop and 6 on ultra wide screens
+/// see the $media map in the config for available screen size prefixes and the columns are numbered based on the column count variable
+@each $breakpoint-name, $breakpoint-size in $media {
+	@include media($breakpoint-name) {
+		@for $width from 1 through $columns {
+			$p: $column-width * $width *1%;
+				.#{$breakpoint-name}-#{$width} {
+					@include col($width);
+				}
+		}
+	};
+};
