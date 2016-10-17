@@ -2,13 +2,13 @@ title: About Me
 ----
 copy:
 #About Me
-####I'm a 28 year old full stack engineer living in Shibuya, Tokyo. I'm from Southampton, UK and have been designing and developing websites for 3+ years.
+####I'm a 28 year old full stack engineer living in Shibuya. I'm from sunny Southampton in the UK and have been designing and developing websites for 3+ years.
 
-I'm an engineer at [DADI+](http://dadi.co) working on a multitude of clients and services. I also create *things and stuff* in my spare time and have a **keen interest in game development**.
+I'm an engineer at [DADI+](http://dadi.co) working on a multitude of clients and services.
 
-I have extensive knowledge of HTML, CSS and JS including build tools and associated technology. My favourite tool set is Webpack, TypeScript and SASS.
+I'm good at HTML, CSS and JS including build tools and other such things. My favourite tool set is Webpack, TypeScript and Sass.
 
-I'm also experienced in back end development using PHP using Laravel, Symphony CMS and Kirby and Node using Express.
+I'm also experienced in back end development using PHP (Laravel, Symphony CMS and Kirby) and Node (Express).
 
 I use SQL and NoSQL databases, with my favourites being MySQL and MongoDB, and *nix based servers - mostly Ubuntu.
 
