@@ -11,9 +11,13 @@ to: 2011-07-01
 overview: At The University of Salford I gained relevant skills and experience in design for a myriad of digital media, from Websites and Apps, to Video, Motion Graphics and 3D Design
 ----
 description:
-The course was dedicated to digital media, in all formats. I had the opportunity to use many different styles and ideas and experiment within the digital remit. Projects included: Advertising and Campaign work utilising Video/3D animation and Video Composition/Editing, Adobe Flash web prototyping, App design and wireframing, Website development and campaign integration with traditional media.
+On this course we covered all aspects of digital design and integration with print based materials.
+
+We used web, mobile and video to experiment in creating convergent campaigns that merged the digital world with the real.
+
+I specialised in video and web design, focussing primarily on video marketing content that ran alongside web campaigns using shot footage, motion graphics and 3D elements.
 
 ----
 page: resume
 ----
-order: 3
+order: 4

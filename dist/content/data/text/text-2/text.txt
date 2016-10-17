@@ -23,12 +23,12 @@ I am an enthusiastic learner, and can pick up new technologies and practices qui
 
 My personal workflow includes the following:
  - HTML5, CSS3, JS
- - webpack, SASS, TypeScript
- - sassdoc, jsdoc, tsdoc & cssdoc for documentation
- - node.js or symphony CMS
+ - Webpack, SASS & TypeScript
+ - sassdoc, jsdoc, typedoc & cssdoc for documentation
+ - node.js or kirby CMS
  - mongodb or mysql
- - mocha/chai & expect
- - github/bitbucket
+ - jasmine
+ - github or bitbucket
 ----
 page: resume
 ----
