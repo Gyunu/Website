@@ -63,7 +63,11 @@ $sizes: (
 	'l': $baseline * 1.3,
 	'xl': $baseline * 2,
 	'xxl': $baseline * 3,
-	'xxxl': $baseline * 5
+	'xxxl': $baseline * 5,
+	'fh': 100vh,
+	'fw': 100vw,
+	'hh': 50vh,
+	'hw': 50vw
 );
 
 
@@ -84,7 +88,11 @@ $positions: (
 		'1': 't',
 		'2': 'b'
 	),
-	'n': 'none'
+	'n': 'none',
+	'fh': 'full height',
+	'fw': 'full width',
+	'hh': 'half height',
+	'hw': 'half width'
 );
 
 //media queries - http://mydevice.io/devices/

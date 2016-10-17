@@ -1,8 +1,8 @@
 title: Hero 1
 ----
-header: Full Stack Engineer, Shibuya Tokyo
+header: Hey! My Name's Dave
 ----
-subheader: Front and Back end development specialist
+subheader: I'm a full stack web engineer living in Shibuya
 ----
 button: 1
 ----

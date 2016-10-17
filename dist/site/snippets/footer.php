@@ -21,7 +21,7 @@ if(get('contact', false)) {
 
 ?>
 
-<footer class="footer">
+<footer class="footer index-2 bg--black">
 			<div class="col xs-12 m-4">
 				<div class="logo m-t-n " style="margin-top: 0;">
 					<img src="/assets/img/logo-white.svg">

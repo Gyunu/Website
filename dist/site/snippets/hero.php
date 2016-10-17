@@ -1,4 +1,4 @@
-<section class="hero" style="background-image: url(<?php echo $data->images()->first()->url() ?>);">
+<section class="hero index-1" style="background-image: url(<?php echo $data->images()->first()->url() ?>);">
 		<h1 class="hero__text">
 			<?php echo $data->header(); ?>
 		</h1>

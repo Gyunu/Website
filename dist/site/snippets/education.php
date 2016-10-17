@@ -1,4 +1,4 @@
-<section class="xs-12 p-h-xl p-b-xxxl c">
+<section class="xs-12 p-h-xl p-b-xxxl c index-2 bg--white">
 	<div class="xs-12">
 		<h1>Education</h1>
 			<h2 class="inline-block m-b-n">
