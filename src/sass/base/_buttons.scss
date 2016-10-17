@@ -52,7 +52,8 @@
 		@include clr('black');
 
 		&:hover {
-			@include bg('black-lightest');
+			@include bg('black');
+			@include clr('white');
 		}
 
 		&.btn--inverse {
