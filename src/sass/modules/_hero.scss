@@ -1,15 +1,14 @@
 .hero {
 	@include bg('black');
 	@include p('h', 'xl');
-	background-image     : url('/img/grass-1.jpg');
-	padding-top          : 40vh;
+	@include p('v', 'hh');
+	@include col($columns);
 	display              : block;
 	height               : 100vh;
-	width                : 100%;
-	position             : relative;
 	text-align           : center;
 	background-position-x: 50%;
 	background-size      : 1610px;
+	position             : fixed;
 	//TODO make this a mixin
 
 	&__text {
