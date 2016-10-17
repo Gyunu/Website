@@ -5,7 +5,7 @@
 		<h4 class="hero__leader">
 			<?php echo $data->subheader(); ?>
 		</h4>
-		<a href="<?php echo $data->button_link() ?>" class="hero__cta btn btn--outline">
+		<a href="<?php echo $data->button_link() ?>" class="hero__cta btn btn--light">
 			<span class="ion ion-chatboxes"></span><?php echo $data->button_text() ?>
 		</a>
 	</section>
