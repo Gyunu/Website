@@ -1,7 +1,7 @@
 <section class="xs-12 p-h-xl p-b-xxxl c">
 	<div class="xs-12">
 		<h1>Work Experience<h1>
-			<h2 class="inline-block m-b-n">
+			<h2 class="inline-block m-b-n clr--green">
 				<?php echo $data->company() ?>
 			</h2>
 			<?php if(!$data->website()->isEmpty()): ?>
