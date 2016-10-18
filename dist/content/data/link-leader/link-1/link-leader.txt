@@ -1,9 +1,29 @@
-title: Find me on Github
+Title: Find me on Github
+
 ----
-link: https://github.com/gyunu
+
+Link: https://github.com/gyunu
+
 ----
-text: Find me on github
+
+Text: Find me on github
+
 ----
-page: index
+
+Page: index
+
 ----
-order: 3
+
+Order: 3
+
+----
+
+Published: 1
+
+----
+
+Index: 3
+
+----
+
+Css: 

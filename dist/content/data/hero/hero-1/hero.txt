@@ -1,15 +1,33 @@
-title: Hero 1
+Title: Homepage Hero
+
 ----
-header: Hey! My Name's Dave
+
+Header: Hey! My Name's Dave
+
 ----
-subheader: I'm a full stack web engineer living in Shibuya
+
+Subheader: I'm a full stack web engineer living in Shibuya
+
 ----
-button: 1
+
+Button-text: Get in touch
+
 ----
-button_text: Get in touch
+
+Button-link: /contact
+
 ----
-button_link: /contact
+
+Page: index
+
 ----
-page: index
+
+Published: 1
+
 ----
-order: 1
+
+Index: 1
+
+----
+
+Css:
