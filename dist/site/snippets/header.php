@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
 		<link rel="icon" href="/favicon.png" type="image/x-icon">
-		<?php echo css('assets/css/min.css') ?>
+		<meta http-equiv="Cache-control" content="public">
 	</head>
 <body class="t-l">
 <?php echo snippet('menu') ?>

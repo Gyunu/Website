@@ -71,3 +71,6 @@ if(get('contact', false)) {
 			</div>
 			<div class="footer__copyright xs-12">Copyright © 2016 <?php echo $site->site_name() ?></div>
 		</footer>
+		<?php echo css('assets/css/min.css') ?>
+	</body>
+</html>
