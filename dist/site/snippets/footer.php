@@ -22,7 +22,7 @@ if(get('contact', false)) {
 ?>
 
 <footer class="footer index-2 bg--black">
-			<div class="col xs-12 m-4">
+			<div class="col xs-12 m-4 bg--black p-t-xl">
 				<div class="logo m-t-n " style="margin-top: 0;">
 					<img src="/assets/img/logo-white.svg">
 				</div>
@@ -33,7 +33,7 @@ if(get('contact', false)) {
 					<a class="leader footer__email" href="mailto: <?php echo $site->email() ?>"><?php echo $site->email() ?></a>
 				</div>
 			</div>
-			<div class="col xs-12 m-4">
+			<div class="col xs-12 m-4 bg--black p-t-xl">
 				<h3>Contact</h3>
 				<form class="footer__form" action="" method="POST" >
 					<fieldset>
@@ -51,7 +51,7 @@ if(get('contact', false)) {
 					<button class="btn btn--outline" type="submit">Submit</button>
 				</form>
 			</div>
-			<div class="col xs-12 m-4">
+			<div class="col xs-12 m-4 bg--black p-t-xl">
 				<div class="footer__feed">
 					<h3>Articles</h3>
 					<h4 class="faded">Sorry, articles aren't available at the moment</h4>
