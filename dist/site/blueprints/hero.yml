@@ -1,0 +1,40 @@
+title: Hero
+pages: true
+files: true
+fields:
+  title:
+    type: text
+    label: title
+    width: 3/4
+  published:
+    type: checkbox
+    label: publish
+    width: 1/4
+  header:
+    type: text
+    label: header
+    width: 1/1
+  subheader:
+    type: text
+    label: Subheader
+    width: 1/1
+  button_text:
+    type: text
+    label: Button Text
+    width: 1/2
+  button_link:
+    type: page
+    label: Button Link
+    width: 1/2
+  page:
+    type: page
+    label: Page
+    width: 1/2
+  index:
+    type: text
+    label: Index
+    width: 1/2
+  css:
+    type: tags
+    label: CSS classes
+    width: 1/1

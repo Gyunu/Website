@@ -1,0 +1,28 @@
+title: Text
+pages: true
+files: true
+fields:
+  title:
+    type: text
+    label: title
+    width: 3/4
+  published:
+    type: checkbox
+    label: publish
+    width: 1/4
+  copy:
+    type: textarea
+    label: copy
+    width: 1/1
+  page:
+    type: page
+    label: Page
+    width: 1/2
+  index:
+    type: text
+    label: Index
+    width: 1/2
+  css:
+    type: tags
+    label: CSS classes
+    width: 1/1

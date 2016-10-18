@@ -1,0 +1,48 @@
+title: Education
+pages: true
+files: true
+fields:
+  title:
+    type: text
+    label: title
+    width: 3/4
+  published:
+    type: checkbox
+    label: publish
+    width: 1/4
+  school:
+    type: text
+    label: School
+    width: 1/1
+  subject:
+    type: text
+    label: Subject
+    width: 1/1
+  from:
+    type: date
+    label: From date
+    width: 1/2
+  date:
+    type: date
+    label: To Date
+    width: 1/2
+  overview:
+    type: textarea
+    label: Overview
+    width: 1/1
+  description:
+    type: textarea
+    label: Description
+    width: 1/1
+  page:
+    type: page
+    label: Page
+    width: 1/2
+  index:
+    type: text
+    label: Index
+    width: 1/2
+  css:
+    type: tags
+    label: CSS classes
+    width: 1/1
