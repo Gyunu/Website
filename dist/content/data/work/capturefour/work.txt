@@ -1,16 +1,30 @@
-company: CaptureFour
+Company: CaptureFour
+
 ----
-website:
+
+Website: 
+
 ----
-position: Creative Intern
+
+Position: Creative Intern
+
 ----
-from: 2012-10-01
+
+From: 2012-10-01
+
 ----
-to: 2013-07-01
+
+To: 2013-07-01
+
 ----
-overview: Capturefour was a small media company based in London, UK. Here I was a video editor and a WordPress website developer.
+
+Overview: Capturefour was a small media company based in London, UK. Here I was a video editor and a WordPress website developer.
+
 ----
-description: Capturefour worked with small business around London to establish a social media profile and website to help garner business.
+
+Description: 
+
+Capturefour worked with small business around London to establish a social media profile and website to help garner business.
 
 We shot client interviews, tips and tricks and testimonials using DSLR cameras as well as developing small websites to drive enquiries and sales.
 
@@ -21,6 +35,29 @@ I was given a lot of creative freedom to generate b-roll and in editing to creat
 We captured the passion that the small business owners had for their trade and express that to their potential customers. The videos were encoded for web, embedding on social media, youtube and used on their profiles on mybuilder.com.
 
 ----
-page: resume
+
+Page: resume
+
 ----
-order: 3
+
+Order: 3
+
+----
+
+Title: Capturefour
+
+----
+
+Published: 1
+
+----
+
+Date: 2012-07-01
+
+----
+
+Index: 5
+
+----
+
+Css: 

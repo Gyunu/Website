@@ -1,16 +1,29 @@
-school: University of Salford
+School: University of Salford
+
 ----
-website: http://salford.ac.uk
+
+Website: http://salford.ac.uk
+
 ----
-subject: Design for Digital Media BA(Hons)
+
+Subject: Design for Digital Media BA(Hons)
+
 ----
-from: 2008-09-01
+
+From: 2008-09-01
+
 ----
-to: 2011-07-01
+
+To: 2011-07-01
+
 ----
-overview: At The University of Salford I gained relevant skills and experience in design for a myriad of digital media, from Websites and Apps, to Video, Motion Graphics and 3D Design
+
+Overview: At The University of Salford I gained relevant skills and experience in design for a myriad of digital media, from Websites and Apps, to Video, Motion Graphics and 3D Design
+
 ----
-description:
+
+Description: 
+
 On this course we covered all aspects of digital design and integration with print based materials.
 
 We used web, mobile and video to experiment in creating convergent campaigns that merged the digital world with the real.
@@ -18,6 +31,29 @@ We used web, mobile and video to experiment in creating convergent campaigns tha
 I specialised in video and web design, focussing primarily on video marketing content that ran alongside web campaigns using shot footage, motion graphics and 3D elements.
 
 ----
-page: resume
+
+Page: resume
+
 ----
-order: 4
+
+Order: 4
+
+----
+
+Title: Salford
+
+----
+
+Published: 1
+
+----
+
+Date: 2011-07-01
+
+----
+
+Index: 4
+
+----
+
+Css: 

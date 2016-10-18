@@ -1,6 +1,9 @@
-title: Resumé
+Title: Resumé
+
 ----
-copy:
+
+Copy: 
+
 #Resumé
 
 ####*I am a full stack web engineer with 3 years experience in design, development and deployment of enterprise scale websites.*
@@ -29,9 +32,23 @@ My personal workflow includes the following:
  - mongodb or mysql
  - jasmine
  - github or bitbucket
+
 ----
-page: resume
+
+Page: resume
+
 ----
-order: 1
+
+Order: 1
+
 ----
-css: 
+
+Css: 
+
+----
+
+Published: 1
+
+----
+
+Index: 1

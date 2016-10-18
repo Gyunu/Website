@@ -1,16 +1,30 @@
-company: DADI+
+Company: DADI+
+
 ----
-website: http://dadi.co
+
+Website: http://dadi.co
+
 ----
-position: Engineer
+
+Position: Engineer
+
 ----
-from: 2013-09-23
+
+From: 2013-09-23
+
 ----
-to: 2016-11-04
+
+To: 2016-11-04
+
 ----
-overview: At DADI+ I was a full stack engineer whose role encompassed front end design and development to back end development, database design and deployment.
+
+Overview: At DADI+ I was a full stack engineer whose role encompassed front end design and development to back end development, database design and deployment.
+
 ----
-description: I worked on multiple clients, spanning small, simple websites to large, multi-page sites. Clients include: [Leo Burnett](http://leoburnett.com), [Leo Burnett Chicago](http://leoburnett.us), [Virgin Limited Edition](http://www.virginlimitededition.com/en/) and [Monocle](http://monocle.com)
+
+Description: 
+
+I worked on multiple clients, spanning small, simple websites to large, multi-page sites. Clients include: [Leo Burnett](http://leoburnett.com), [Leo Burnett Chicago](http://leoburnett.us), [Virgin Limited Edition](http://www.virginlimitededition.com/en/) and [Monocle](http://monocle.com)
 
 Work involved included front end design, development and templating to information architecture, RESTful API design and deployment practices from 1 to 20+ websites, using Ansible and Github.
 
@@ -23,7 +37,31 @@ Technology used across the sites varied, but included:
  - Ubuntu & Vagrant
  - Github
  - Small amount of Objective-C & Cordova/Ionic Framework
+
 ----
-page: resume
+
+Page: resume
+
 ----
-order: 2
+
+Order: 2
+
+----
+
+Title: DADI+
+
+----
+
+Published: 1
+
+----
+
+Date: 2016-11-04
+
+----
+
+Index: 2
+
+----
+
+Css: 
