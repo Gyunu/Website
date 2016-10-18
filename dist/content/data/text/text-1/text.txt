@@ -18,4 +18,4 @@ page: index
 ----
 order: 2
 ----
-css: m-t-fh
+css: m-t-fh, box-xl
