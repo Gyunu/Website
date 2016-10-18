@@ -1,0 +1,5 @@
+@each $size-letter, $size in $sizes {
+	.box-#{$size-letter} {
+		box-shadow: 0 0 $size 10px #{map-get($colors, 'black')};
+	}
+}
