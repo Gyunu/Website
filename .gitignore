@@ -1,5 +1,9 @@
 node_modules
 npm-debug.log
-dist/assets
+dist/content/*
+dist/assets/*
+site/config/*
+site/accounts/*
+thumbs/*
 .vagrant
 *.log
