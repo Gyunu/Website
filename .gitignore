@@ -2,8 +2,9 @@ node_modules
 npm-debug.log
 dist/content/*
 dist/assets/*
-site/config/*
-site/accounts/*
+dist/site/config/*
+dist/site/accounts/*
+dist/site/cache/*
 thumbs/*
 .vagrant
 *.log
