@@ -1,0 +1,17 @@
+github: http://github.com/gyunu
+----
+email: hello@gyu.nu
+----
+site_name: gyunu
+----
+footer_title: Lets Work Together
+----
+footer_subtitle: We can create something great!
+----
+footer_copy: Contact me via that email address below, the form to the right or on the contact page. I'll respond as quick as possible!
+----
+title: Gyu.nu | Full stack web engineer, Shibuya Tokyo
+----
+description: I am a 28 year old full stack web engineer and designer living in Shibuya.
+----
+keywords: full stack, web developer, web engineer, HTML, JS, CSS, SASS, LESS, TypeScript, PHP, Node, Laravel, Front End Developer, Back End Developer, Websites
