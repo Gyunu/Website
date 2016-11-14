@@ -1,9 +1,10 @@
-TODO.md
-dist/thumbs/*
-dist/assets/*
-dist/site/cache/*
-dist/site/config/*
-dist/site/accounts/*
-dist/site/content/*
 node_modules
 npm-debug.log
+dist/content/*
+dist/assets/*
+dist/site/config/*
+dist/site/accounts/*
+dist/site/cache/*
+thumbs/*
+.vagrant
+*.log
