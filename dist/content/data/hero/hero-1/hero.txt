@@ -1,0 +1,33 @@
+Title: Homepage Hero
+
+----
+
+Header: Hey! My name's Dave!
+
+----
+
+Subheader: I'm a full stack web engineer living in Shibuya
+
+----
+
+Button-text: Get in touch
+
+----
+
+Button-link: /contact
+
+----
+
+Page: index
+
+----
+
+Published: 1
+
+----
+
+Index: 1
+
+----
+
+Css: 

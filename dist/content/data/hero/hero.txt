@@ -1,0 +1,33 @@
+Title: Hero
+
+----
+
+Published: 0
+
+----
+
+Header: 
+
+----
+
+Subheader: 
+
+----
+
+Button-text: 
+
+----
+
+Button-link: 
+
+----
+
+Page: 
+
+----
+
+Index: 
+
+----
+
+Css: 

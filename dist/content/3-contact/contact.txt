@@ -1,0 +1,27 @@
+title: Contact
+----
+intro:
+#Resumé
+####*I'm a full stack web engineer with generous experience in designing, implementing and deploying RESTful services.*
+
+I love designing and creating frameworks, APIs and interface components using primarily node.js based technology on both the front and back end.
+
+My favourite front end stack is SASS and TypeScript using Webpack and custom `npm` build scripts rather than using Grunt or Gulp -- decided after using Grunt and Gulp heavily on projects.
+
+I have notable experience in using PHP, MySQL and Ubuntu to develop and deploy websites, using CMS's such as WordPress, Symphony CMS and Kirby CMS.
+
+I prefer using Laravel 5 and it's ORM Eloquent for back end related tasks.
+
+I'm a fan of test driven development (TDD) using Mocha/Chai and PHPUnit.
+
+My personal workflow includes the following:
+ - HTML5, CSS3, JS
+ - webpack, SASS, TypeScript
+ - sassdoc, jsdoc, tsdoc & cssdoc for documentation
+ - node.js or symphony CMS
+ - mongodb or mysql
+ - mocha/chai & expect
+ - github/bitbucket
+----
+work:
+#Work Experience
