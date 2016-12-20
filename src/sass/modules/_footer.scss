@@ -7,20 +7,21 @@
 	background-size: 150px;
 	background-position-x: 50%;
 
-	.col {
-		@include m('b', 'xl');
+	&__column {
+		@include bg('black');
+		@include p('u', 'xl');
 	}
 
-	&__email {
-		@include clr('white');
-		&:before {
-			display: none;
-		}
+	&__logo {
+		@include col($columns / 4);
+		@include p('l', 'n');
 	}
 
 	&__form {
+		@include m('b', 'n');
 		fieldset {
 			@include m('t', 'n');
+			@include p('h', 'xl');
 		}
 		textarea {
 			min-height: 0;
@@ -34,14 +35,22 @@
 	&__article {
 		a {
 			&:before {
-				display: none;
+				@include d('n');
 			}
 		}
+	}
+
+	.btn {
+		@include m('t', 'l');
+		@include m('b', 'n');
 	}
 
 	&__copyright {
 		@include p('v', 'l');
 		@include bdr('t', 'white');
+		@include bg('black');
+		@include clr('white');
+		@include p('h', 'xl');
 		clear: both;
 	}
 }

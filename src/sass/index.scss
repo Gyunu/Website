@@ -6,31 +6,51 @@
 ////
 
 // @import url("//hello.myfonts.net/count/323d34");
-@import "./config";
-@import "./base/_functions";
-@import "./base/_mixins";
-@import "./icons/ionicons";
-@import "./base/_reset";
-@import "./base/_clearfix";
-@import "./base/_layout";
-@import "./base/_layers";
-@import "./base/_grid";
-@import "./base/_fonts";
-@import "./base/_typography";
-@import "./base/_color";
-@import "./base/_image";
-@import "./base/_lists";
-@import "./base/_meter";
-@import "./base/_progress";
-@import "./base/_input";
-@import "./base/_buttons";
-@import "./base/shadow";
-@import "./modules/_logo";
-@import "./modules/_hero";
-@import "./modules/_footer";
-@import "./modules/_navigation";
+@import './config';
+@import './base/functions';
+@import './base/mixins';
+@import './icons/ionicons';
+@import './base/reset';
+@import './base/clearfix';
+@import './base/layout';
+@import './base/layers';
+@import './base/grid';
+@import './base/fonts';
+@import './base/typography';
+@import './base/color';
+@import './base/image';
+@import './base/lists';
+@import './base/meter';
+@import './base/progress';
+@import './base/input';
+@import './base/buttons';
+@import './base/shadow';
+@import './base/page';
+@import './base/popup';
+@import './base/modal';
+@import './base/info';
+@import "./base/state";
+@import "./base/actions";
+@import "./modules/logo";
+@import "./modules/hero";
+@import "./modules/footer";
+@import "./modules/navigation";
+@import "./modules/project";
+@import "./modules/article";
+@import "./modules/education";
+@import "./modules/text";
 
 * {
 	box-sizing: border-box;
 	@extend .cf;
+}
+
+html {
+	position: relative;
+	transition: all 0.5s ease-in-out;
+	top: -100vh;
+
+	&.nav {
+		top: 0;
+	}
 }

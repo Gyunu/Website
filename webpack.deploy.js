@@ -11,10 +11,11 @@ module.exports = {
 		},
 		module: {
 			loaders: [
-				{ test: /\.tsx?$/, loader: 'ts-loader' }
+				{ test: /\.tsx?$/, loader: 'ts-loader' },
+				{ test: /\.json$/, loader: 'json' }
 			]
 		},
 		plugins: [
-			new webpack.optimize.UglifyJsPlugin({minimize: true})
+			new webpack.optimize.UglifyJsPlugin({minimize: true, warnings: false})
 		]
 };

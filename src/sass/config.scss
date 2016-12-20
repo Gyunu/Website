@@ -28,23 +28,19 @@ $baseline: 1rem;
 
 
 // Colors
-$basecolor: #88E3F1;
+$basecolor: #19C4FF;
 /// This is a map of all colors used in the website
 /// It's used in a variety of mixins to generate classes for text color, background color and border color
 /// Access properties where needed with map-get($colors, 'property')
 $colors: (
-	'f': #FFF,
-	'0': #000,
-	'black': #333,
-	'black-lighter': lighten(#333, 20%),
-	'black-lightest': lighten(#333, 20%),
-	'grey': #CCC,
-	'white': #FBFBFB,
-	'blue': $basecolor,
-	'green': adjust-hue($basecolor, 270deg),
-	'red': adjust-hue($basecolor, 150deg),
-	'yellow': adjust-hue($basecolor, 230deg),
-	'none': transparent
+  'black': #333,
+  'grey': #ccc,
+  'white': #fbfbfb,
+  'blue': darken($basecolor, 10%),
+  'green': darken(adjust-hue($basecolor, 260deg), 15%),
+  'red': darken(adjust-hue($basecolor, 170deg), 10%),
+  'yellow': darken(adjust-hue($basecolor, 210deg), 10%),
+  'none': transparent
 );
 
 
@@ -56,18 +52,19 @@ $colors: (
 /// It's also used to generate utility css selectors like .m-u-m (medium, universal margin).
 /// Access properties where needed with map-get($sizes, 'property')
 $sizes: (
-	'n': $baseline * 0,
-	'xs': $baseline * 0.4,
-	's':	$baseline * 0.6,
-	'm': $baseline,
-	'l': $baseline * 1.3,
-	'xl': $baseline * 2,
-	'xxl': $baseline * 3,
-	'xxxl': $baseline * 5,
-	'fh': 100vh,
-	'fw': 100vw,
-	'hh': 50vh,
-	'hw': 50vw
+  'n': $baseline * 0,
+  'xxs': $baseline * .2,
+  'xs': $baseline * .4,
+  's':	$baseline * .6,
+  'm': $baseline,
+  'l': $baseline * 1.3,
+  'xl': $baseline * 2,
+  'xxl': $baseline * 3,
+  'xxxl': $baseline * 5,
+  'fh': 100vh,
+  'fw': 100vw,
+  'hh': 50vh,
+  'hw': 50vw
 );
 
 
@@ -75,33 +72,62 @@ $sizes: (
 /// It's used in the m() and p() mixins to generate the required property positions
 /// Access properties where needed with map-get($positions, 'property')
 $positions: (
-	't': 'top',
-	'b': 'bottom',
-	'l': 'left',
-	'r': 'right',
-	'u': 'universal',
-	'h': (
-		'1': 'l',
-		'2': 'r'
-	),
-	'v': (
-		'1': 't',
-		'2': 'b'
-	),
-	'n': 'none',
-	'fh': 'full height',
-	'fw': 'full width',
-	'hh': 'half height',
-	'hw': 'half width'
+  't': 'top',
+  'b': 'bottom',
+  'l': 'left',
+  'r': 'right',
+  'u': 'universal',
+  'h': (
+    '1': 'l',
+    '2': 'r'
+  ),
+  'v': (
+    '1': 't',
+    '2': 'b'
+  ),
+  'n': 'none',
+  'fh': 'full height',
+  'fw': 'full width',
+  'hh': 'half height',
+  'hw': 'half width'
 );
 
 //media queries - http://mydevice.io/devices/
 $media: (
-	'xs': 0em, //320px - smallest device screen size
-	's': 37.5em, //600px, - smallest tablet screen size
-	'm': 75em, //1200px
-	'l': 100em, //1600px
-	'xl': 130em
+  'xs': 0, //320px - smallest device screen size
+  's': 37.5em, //600px, - smallest tablet screen size
+  'm': 75em, //1200px
+  'l': 100em, //1600px
+  'xl': 130em
+);
+
+$display: (
+  'i': 'inline',
+  'ib': 'inline-block',
+  'if': 'inline-flex',
+  'b': 'block',
+  'f': 'flex',
+  't': 'table',
+  'l': 'list-item',
+  'r': 'run-in',
+  'tc': 'table-cell',
+  'n': 'none',
+  'ih': 'inherit',
+  'in': 'initial'
+);
+
+$shades: (
+  'normal': 0,
+  'dark': 5%,
+  'darker': 10%,
+  'darkest': 15%
+);
+
+$timings: (
+  'slow': 1000,
+  'medium': 500,
+  'fast': 300,
+  'fastest': 150
 );
 
 /// This is the amount of columns defined for the grid system
@@ -113,6 +139,3 @@ $column-width: 100 / $columns;
 
 //layers - z-index
 $layers: 10;
-
-//TODO move this to mixin.
-$linear-gradient: repeating-linear-gradient(135deg, transparent, transparent 10px, rgba(255,255,255,.1) 10px, rgba(255,255,255,.1) 20px);

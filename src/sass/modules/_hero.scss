@@ -1,40 +1,91 @@
 .hero {
 	@include bg('black');
 	@include p('h', 'xl');
-	@include p('v', 'hh');
 	@include col($columns);
-	display              : block;
+	@include d('b');
+
 	height               : 100vh;
-	text-align           : center;
+	text-align           : left;
 	background-position-x: 50%;
-	background-size      : 910px;
-	position             : fixed;
-	//TODO make this a mixin
+	background-size      : 150px;
+	position             : relative;
+	padding-top: 15vh;
+	overflow: hidden;
+
+	&.loading {
+		background: ('black', 1, 'darkest');
+	}
+
+	&.loaded {
+		.hero__container {
+			@include transition('opacity', 'slow');
+			opacity: 1;
+		}
+
+	}
+
+	&__container {
+		@include bg('white');
+		@include clr('black');
+		@include rad('u', 's');
+		opacity: 0;
+	}
 
 	&__text {
-		@include text('xxl');
+		@include p('h', 'xl');
+		@include bg('black');
 		@include clr('white');
+		@include text('xxl');
 		@include font('light');
 		@include p('v', 'l');
 		@include m('b', 'n');
-		background: -moz-linear-gradient(left, rgba(51,51,51,0) 0%, rgba(51,51,51,1) 50%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(left, rgba(51,51,51,0) 0%,rgba(51,51,51,1) 50%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to right, rgba(51,51,51,0) 0%,rgba(51,51,51,1) 50%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00333333', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 */
+		@include bg('black');
+		//TODO fixe the rad mixin to allow for these
+		border-top-left-radius: map-get($sizes, 's');
+		border-top-right-radius: map-get($sizes, 's');
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		p {
+			@include m('u', 'n');
+		}
 	}
 
 	&__leader {
-		@include clr('white');
+		@include p('h', 'xl');
 		@include font('light');
 		@include p('v', 'm');
+		@include m('b', 'n');
 		max-width: 100%;
-		background: -moz-linear-gradient(left, rgba(51,51,51,0) 0%, rgba(51,51,51,1) 50%, rgba(125,185,232,0) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(left, rgba(51,51,51,0) 0%,rgba(51,51,51,1) 50%,rgba(125,185,232,0) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to right, rgba(51,51,51,0) 0%,rgba(51,51,51,1) 50%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00333333', endColorstr='#007db9e8',GradientType=1 ); /* IE6-9 */
+		border-top-left-radius: map-get($sizes, 's');
+		border-top-right-radius: map-get($sizes, 's');
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		p {
+			@include m('u', 'n');
+		}
+	}
+
+	&__intro {
+		@include p('h', 'xl');
+		@include m('u', 'n');
+		max-width: 100%;
 	}
 
 	&__cta {
+		@include p('h', 'xl');
+		@include p('t', 'xl');
 
+		.btn {
+			@include d('b');
+			@include col(4);
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 }

@@ -1,0 +1,50 @@
+.modal {
+	@include d('b');
+	@include col($columns/3);
+	@include bg('white');
+	@include shadow(0, 0, 'm');
+	margin-top: 10vh;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+
+	&__container {
+		@include col($columns);
+		@include bg('black', 0.9);
+		@include layer(100);
+		@include d('n');
+		height: 100vh;
+		position: fixed;
+		overflow: hidden;
+		top: 0;
+		&.on {
+			@include d('b');
+		}
+	}
+
+	&__header {
+		@include text('l');
+		@include bg('blue');
+		@include clr('white');
+		@include p('h', 'xl');
+		@include p('v', 'm');
+	}
+
+	&__text {
+		@include m('b', 'xl');
+		@include p('u', 'xl');
+		height: 200px;
+		overflow-y: scroll;
+	}
+
+	&__buttons {
+		float: right;
+		@include p('b', 'xl');
+		@include p('r', 'xl');
+		.btn {
+			@include m('u', 'n');
+			@include m('l', 's');
+		}
+	}
+}

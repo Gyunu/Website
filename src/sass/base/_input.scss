@@ -1,17 +1,18 @@
 fieldset {
-	@include m('v', 'xl');
-	@include p('u', 'm');
+  @include m('v', 'xl');
+  @include p('u', 'm');
+  @include p('t', 'xl');
 }
 
 legend {
-	@include p('h', 'l');
-	font-weight: 700;
+  @include p('h', 'l');
+  font-weight: 700;
 }
 
 label {
-	@include text('s');
-	@include m('b', 'm');
-	font-weight: 700;
+  @include text('m');
+  @include m('b', 'm');
+  font-weight: 700;
 }
 
 input[type="text"],
@@ -23,128 +24,129 @@ input[type="email"],
 input[type="website"],
 input[type="color"],
 input[type="tel"] {
-	@include p('u', 's');
-	@include m('t', 'xs');
-	@include m('b', 'm');
-	@include col($columns);
-	@include text('m');
-	@include clr('black');
-	@extend .block;
-	font-weight: 300;
-
+  @extend %focus;
+  @include p('u', 's');
+  @include m('t', 'xs');
+  @include m('b', 'xl');
+  @include col($columns);
+  @include text('m');
+  @include clr('black');
+  @include d('b');
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-	display:none;
-
+  @include d('n');
 }
 
 input[type="checkbox"] {
-	& + span {
-		width: 15px;
-		height: 15px;
-		@include bg('f');
-		@include bdr('u', 'grey');
-		@include p('u', 's');
-		@include m('t', 'xs');
-		-webkit-appearance: textfield;
-		position: relative;
-		display: block;
-		&:before {
-			@include text('m');
-			@include clr('white');
-			@extend .ion-checkmark-round;
-			position: absolute;
-			top: 2px;
-			left: 3px;
-			right: 0;
-			opacity: 0.3;
-		}
-	}
+  & + span {
+    @include bg('white');
+    @include bdr('u', 'grey');
+    @include p('u', 's');
+    @include m('t', 'xs');
+    @include d('b');
+    cursor: pointer;
+    height: 15px;
+    position: relative;
+    width: 15px;
 
-	&:checked {
-		& + span {
-			&:before {
-				@include text('m');
-				@include clr('black');
-				@extend .ion-checkmark-round;
-				position: absolute;
-				top: 2px;
-				left: 3px;
-				right: 0;
-				opacity: 1;
-			}
-		}
-	}
+    &::before {
+      @extend .ion-checkmark-round:before;
+      @include text('m');
+      @include clr('grey');
+      left: 3px;
+      opacity: .3;
+      position: absolute;
+      right: 0;
+      top: 2px;
+    }
+  }
+
+  &:checked {
+    & + span::before {
+      @include text('m');
+      @include clr('black');
+      opacity: 1;
+    }
+  }
 }
 
 input[type="radio"] {
-	& + span {
-		width: 15px;
-		height: 15px;
-		@include bg('f');
-		@include bdr('u', 'grey');
-		@include p('u', 's');
-		@include m('t', 'xs');
-		@include rad('u', 'xl');
-		position: relative;
-		display: block;
-		&:before {
-			@include text('s');
-			@include clr('white');
-			@extend .ion-record;
-			position: absolute;
-			top: 2px;
-			left: 3px;
-			right: 0;
-			opacity: 0.3;
-		}
-	}
+  & + span {
+    @include bg('white');
+    @include bdr('u', 'grey');
+    @include p('u', 's');
+    @include m('t', 'xs');
+    @include rad('u', 'xl');
+    cursor: pointer;
+    display: block;
+    height: 15px;
+    position: relative;
+    width: 15px;
 
-	&:checked {
-		& + span {
-			&:before {
-				@include text('s');
-				@include clr('black');
-				@extend .ion-record;
-				position: absolute;
-				top: 5px;
-				left: 6px;
-				right: 0;
-				opacity: 1;
-			}
-		}
-	}
+    &::before {
+      @extend .ion-record:before;
+      @include text('s');
+      @include clr('grey');
+      left: 5.7px;
+      opacity: .3;
+      position: absolute;
+      right: 0;
+      top: 5.4px;
+    }
+  }
+
+  &:checked {
+    & + span::before {
+      @include clr('black');
+      opacity: 1;
+    }
+  }
 }
 
 textarea {
-	@include p('u', 's');
-	@include m('t', 'xs');
-	@include m('b', 'm');
-	@include col($columns);
-	@include text('m');
-	@include clr('black');
-	@extend .block;
-	-webkit-appearance: textfield;
-	min-height: 300px;
-	font-weight: 300;
-	resize: vertical;
+  @extend %focus;
+  @include p('u', 's');
+  @include m('t', 'xs');
+  @include m('b', 'm');
+  @include col($columns);
+  @include text('m');
+  @include clr('black');
+  @include d('b');
+  -webkit-appearance: textfield;
+  font-weight: 300;
+  min-height: 300px;
+  resize: vertical;
 }
 
 input[type="color"] {
-	@include bg('f');
-	@include bdr('u', 'grey');
-	@include p('u', 'n');
-	@include m('u', 'n');
-	height: 0;
-	visibility: hidden;
-	& + span {
-		@include p('u', 'm');
-		@include col($columns);
-		@include bdr('u', 'grey');
-		@include text('l');
-		@extend .block;
-		@extend .ion-paintbucket;
-	}
+  @extend %focus;
+  @include bg('white');
+  @include bdr('u', 'grey');
+  @include p('u', 'n');
+  @include m('u', 'n');
+  height: 0;
+  visibility: hidden;
+
+  & + span {
+    @extend .ion-paintbucket;
+    @include p('u', 'm');
+    @include col($columns);
+    @include bdr('u', 'grey');
+    @include text('l');
+    @include d('b');
+  }
+}
+
+%focus {
+  font-weight: 300;
+  outline-width: 1px;
+  outline-color: rgba(map-get($colors, 'blue'), 0);
+  outline-offset: 0px;
+
+  &:focus {
+    @include transition('outline-color', 'fast');
+    outline-color: rgba(map-get($colors, 'blue'), 0.5);
+  }
 }

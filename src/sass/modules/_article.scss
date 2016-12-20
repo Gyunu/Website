@@ -1,0 +1,65 @@
+.article {
+
+  @include bdr('b', 'grey');
+  @include p('v', 'xl');
+  @include m('b', 's');
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+
+  &:first-of-type {
+    @include p('t', 'n');
+  }
+
+  &:last-child {
+    @include bdr('b', 'none');
+    @include m('b', 'n');
+  }
+
+  &__container {
+    @include p('h', 'xl');
+    @include p('b', 'xxxl');
+    @include bdr('b', 'grey');
+    &.loaded {
+      .article {
+        @include transition('opacity', 'slow');
+        opacity: 1;
+      }
+    }
+  }
+
+  &__header {
+
+  }
+
+  &__title {
+
+  }
+
+  &__content {
+
+  }
+
+  &__image {
+  }
+
+  &__summary {
+    @include m('b', 'xl');
+  }
+
+  &__meta {
+    @include clr('blue');
+    @include m('b', 'l');
+
+    span {
+      @include d('ib');
+    }
+  }
+
+  &__published-at {
+
+  }
+
+  &__author {
+  }
+}

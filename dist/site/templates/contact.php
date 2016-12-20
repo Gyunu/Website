@@ -25,15 +25,15 @@ if(get('contact', false)) {
 
 <?php snippet('header') ?>
 
-  <main class="main" role="main">
+  <main role="main">
 
-		<section class="main xs-12">
-			<section class="xs-12 p-h-xl p-v-xxxl c">
-				<div class="xs-12">
-					<h1>Contact</h1>
-					<h4><em>Contact me via the form below or email me using the button below</em></h4>
-					<a class="leader" href="mailto:<?php echo $site->email() ?>"><?php echo $site->email() ?></a>
-				</div>
+		<section class="p-h-xl">
+				<header>
+					<h1>Contact me</h1>
+					<div class="buttons">
+						<a class="btn btn--blue" href="mailto:<?php echo $site->email() ?>"><span class="ion ion-email"></span><?php echo $site->email() ?></a>
+					</div>
+				</header>
 				<form class="xs-12" action="" method="POST">
 					<fieldset>
 						<legend>Your Details</legend>
@@ -55,10 +55,9 @@ if(get('contact', false)) {
 							<textarea name="contact[page][message]"></textarea>
 						</label>
 					</fieldset>
-					<button type="submit" class="btn"><span class="ion ion-paper-airplane"></span> Submit</button>
+					<button type="submit" class="btn btn--green"><span class="ion ion-paper-airplane"></span> Submit</button>
 				</form>
-				</section>
-			</section>
+		</section>
   </main>
 
 <?php snippet('footer') ?>

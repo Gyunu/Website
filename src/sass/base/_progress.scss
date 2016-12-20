@@ -1,34 +1,31 @@
 progress {
-	-webkit-appearance: none;
-   appearance: none;
-	@include col($columns);
-	@extend .block;
-	height: $baseline;
-	//with a defined value
-	&[value] {
-		&::-webkit-progress-bar {
-			@include bg('black-lighter');
-			background-image: $linear-gradient;
-		}
-	}
+  @include col($columns);
+  @include d('b');
+  -webkit-appearance: none;
+  appearance: none;
+  height: $baseline;
+  //with a defined value
+  &[value] {
+    &::-webkit-progress-bar {
+      @include bg('black');
+      // background-image: $linear-gradient;
+    }
+  }
 
-	//no defined value- think ajax
-	&:not([value]) {
-		&::-webkit-progress-bar {
+  //no defined value- think ajax
+  &:not([value]) {
+    &::-webkit-progress-bar {
+      @include bg('black');
+      // background-image: repeating-linear-gradient(135deg, rgba(214,246,179,.7), rgba(214,246,179,.7) 10px, rgba(214,246,179,.5) 10px, rgba(214,246,179,.5) 20px);
+    }
+  }
 
-			@include bg('black-lighter');
-			background-image: repeating-linear-gradient(135deg, rgba(214,246,179,.7), rgba(214,246,179,.7) 10px, rgba(214,246,179,.5) 10px, rgba(214,246,179,.5) 20px);
-		}
-	}
-
-
-
-	&::-webkit-progress-value {
-		@include bg('green');
-	}
+  &::-webkit-progress-value {
+    @include bg('green');
+  }
 }
 
 @keyframes animate-stripes {
-	 0% {background-position:  0 0;}
-   100% { background-position: -100px 0px; }
+  0% { background-position: 0 0;}
+  100% { background-position: -100px 0; }
 }

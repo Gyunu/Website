@@ -13,15 +13,15 @@
 ///  margin-top: 2em;
 ///  margin-bottom: 2em;
 @mixin m($position, $size) {
-	$p: positions('margin', $position);
-	@if(type-of($p) == 'map') {
-		#{map-get($p, '1'))}: #{map-get($sizes, $size)};
-		#{map-get($p, '2'))}: #{map-get($sizes, $size)};
-	}
-	@if(type-of($p) == 'string') {
+  $p: positions('margin', $position);
+  @if(type-of($p) == 'map') {
+    #{map-get($p, '1')}: #{map-get($sizes, $size)};
+    #{map-get($p, '2')}: #{map-get($sizes, $size)};
+  }
+  @if(type-of($p) == 'string') {
 
-		#{$p}: #{map-get($sizes, $size)}
-	}
+    #{$p}: #{map-get($sizes, $size)};
+  }
 
 }
 
@@ -34,14 +34,14 @@
 ///  padding-top: 2em;
 ///  padding-bottom: 2em;
 @mixin p($position, $size) {
-	$p: positions('padding', $position);
-	@if(type-of($p) == 'map') {
-		#{map-get($p, '1'))}: #{map-get($sizes, $size)};
-		#{map-get($p, '2'))}: #{map-get($sizes, $size)};
-	}
-	@if(type-of($p) == 'string') {
-		#{$p}: #{map-get($sizes, $size)}
-	}
+  $p: positions('padding', $position);
+  @if(type-of($p) == 'map') {
+    #{map-get($p, '1')}: #{map-get($sizes, $size)};
+    #{map-get($p, '2')}: #{map-get($sizes, $size)};
+  }
+  @if(type-of($p) == 'string') {
+    #{$p}: #{map-get($sizes, $size)};
+  }
 }
 
 
@@ -51,7 +51,7 @@
 ///  text('xl') ->
 ///  font-size: 2em;
 @mixin text($size) {
-	font-size: #{map-get($sizes, $size)};
+  font-size: #{map-get($sizes, $size)};
 }
 
 
@@ -61,7 +61,7 @@
 ///  text('regular') ->
 ///  font-family: 'rotis-sans-regular';
 @mixin font($name) {
-	font-family: #{map-get($fonts, $name)};
+  font-family: #{map-get($fonts, $name)};
 }
 
 
@@ -71,7 +71,7 @@
 ///  text('green') ->
 ///  color: green;
 @mixin clr($color) {
-		color: #{map-get($colors, $color)};
+  color: #{map-get($colors, $color)};
 }
 
 
@@ -80,8 +80,8 @@
 /// @example
 ///  bg('green') ->
 ///  background-color: green;
-@mixin bg($color) {
-	background-color: #{map-get($colors, $color)};
+@mixin bg($color, $alpha: 1, $shade: 'normal') {
+  background-color: rgba(darken(map-get($colors, $color), map-get($shades, $shade)), $alpha);
 }
 
 
@@ -91,14 +91,14 @@
 ///  bdr('t', 'green') ->
 ///  border-top: 1px solid green
 @mixin bdr($position, $color) {
-	$p: positions('border', $position);
-	@if(type-of($p) == 'map') {
-		#{map-get($p, '1')}: 1px solid #{map-get($colors, $color)};
-		#{map-get($p, '1')}: 1px solid #{map-get($colors, $color)};
-	}
-	@if(type-of($p) == 'string') {
-		#{$p}: 1px solid #{map-get($colors, $color)};
-	}
+  $p: positions('border', $position);
+  @if(type-of($p) == 'map') {
+    #{map-get($p, '1')}: 1px solid #{map-get($colors, $color)};
+    #{map-get($p, '1')}: 1px solid #{map-get($colors, $color)};
+  }
+  @if(type-of($p) == 'string') {
+    #{$p}: 1px solid #{map-get($colors, $color)};
+  }
 
 }
 
@@ -109,18 +109,18 @@
 ///  width: 8.1666%;
 /// @todo Is this a good idea?
 @mixin col($number) {
-	width: $column-width * $number * 1%;
+  width: $column-width * $number * 1%;
 }
 
 @mixin rad($position, $size) {
-	$p: positions('border-radius', $position);
-	@if(type-of($p) == 'map') {
-		#{map-get($p, '1'))}: #{map-get($sizes, $size)};
-		#{map-get($p, '2'))}: #{map-get($sizes, $size)};
-	}
-	@if(type-of($p) == 'string') {
-		#{$p}: #{map-get($sizes, $size)}
-	}
+  $p: positions('border-radius', $position);
+  @if(type-of($p) == 'map') {
+    #{map-get($p, '1')}: #{map-get($sizes, $size)};
+    #{map-get($p, '2')}: #{map-get($sizes, $size)};
+  }
+  @if(type-of($p) == 'string') {
+    #{$p}: #{map-get($sizes, $size)};
+  }
 }
 
 
@@ -132,12 +132,36 @@
 ///   } ->
 ///   @media all and (min-width: 0em) { display: block }
 @mixin media($breakpoint) {
-	@media all and (min-width: #{map-get($media, $breakpoint)}) {
-		@content;
-	}
+  @media all and (min-width: #{map-get($media, $breakpoint)}) {
+    @content;
+  }
 }
 
 //unnessecary
 @mixin layer($index) {
-	z-index: $index;
+  z-index: $index;
+}
+
+@mixin shadow($size, $alpha: .6) {
+  box-shadow: 0 0 map-get($sizes, $size) 10px rgba(map-get($colors, 'black'), $alpha);
+}
+
+@mixin d($name) {
+  display: #{map-get($display, $name)};
+}
+
+@mixin cf() {
+  @extend %cf;
+}
+
+@mixin shadow($x: 0, $y: 0, $size: 'm') {
+  @if($size == 'n') {
+    box-shadow: none;
+  } @else {
+    box-shadow: #{$x}px #{$y}px map-get($sizes, $size) 1px rgba(map-get($colors, 'black'), .3);
+  }
+}
+
+@mixin transition($property: '', $speed: 'slow', $easing: 'linear', $delay: 0 ) {
+  transition: #{$property} #{map-get($timings, $speed)}ms #{$easing} #{$delay}ms;
 }

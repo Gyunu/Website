@@ -1,25 +1,25 @@
 meter {
-	@include col($columns);
-	height: $baseline;
+  @include col($columns);
+  height: $baseline;
 }
 
 meter::-webkit-meter-bar {
+  @include bg('black');
   background: none;
-	@include bg('black-lighter');
-	background-image: $linear-gradient;
+  // background-image: $linear-gradient;
 }
 
 meter::-webkit-meter-optimum-value {
-	background: none;
-	@include bg('green');
+  @include bg('green');
+  background: none;
 }
 
 meter::-webkit-meter-suboptimum-value {
-	background: none;
-	@include bg('yellow');
+  @include bg('yellow');
+  background: none;
 }
 
 meter::-webkit-meter-even-less-good-value {
-	background: none;
-	@include bg('red');
+  @include bg('red');
+  background: none;
 }

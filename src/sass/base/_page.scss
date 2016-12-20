@@ -1,0 +1,96 @@
+main {
+  @include bg('black', 1, 'dark');
+  background-image: url('/assets/img/bg-bw-5.svg');
+	background-size: 150px;
+	background-position-x: 50%;
+
+  header {
+    @include p('h', 'xl');
+    @include p('v', 'm');
+    @include m('b', 'xl');
+    @include bg('black');
+    @include clr('white');
+    @include cf;
+    @include col($columns);
+    line-height: 1;
+    position: relative;
+    text-align: left;
+
+    h1 {
+      @include m('h', 'n');
+      @include m('v', 'm');
+      @include text('xl');
+      float: left;
+    }
+
+    p {
+      @include text('m');
+    }
+
+    .buttons {
+      @include m('t', 's');
+      float: right;
+
+      button {
+        @include m('u', 'n');
+      }
+    }
+  }
+
+  section {
+    @include bg('white');
+    @include p('t', 'l');
+    position: relative;
+
+    header {
+      @include m('b', 'xxl');
+      @include p('u', 'n');
+      @include bg('white');
+      @include clr('black');
+      @include shadow(0, 0, 'n');
+      @include bdr('b', 'grey');
+      position: relative;
+
+      &:before {
+        @include bg('blue');
+        @include d('b');
+        width: 100px;
+        width: 25px;
+        content: '';
+        position: absolute;
+        height: 200%;
+        left: -50px;
+        top: -21px;
+      }
+
+      h1 {
+        @include col($columns / 2);
+        @include text('xl');
+        @include m('t', 'm');
+        @include m('r', 'n');
+      }
+
+      .buttons {
+        @include m('t', 's');
+
+
+        button {
+          @include m('u', 'n');
+          float: right;
+        }
+      }
+    }
+
+    footer {
+      @include bg('white');
+      @include clr('black');
+    }
+  }
+
+  footer {
+    @include bg('black');
+    @include clr('white');
+    @include p('u', 'xl');
+    @include m('t', 'xl');
+  }
+}

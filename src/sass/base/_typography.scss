@@ -106,7 +106,7 @@ figure {
 }
 
 figcaption {
-	@include clr('black-lighter');
+	@include clr('black');
 	@include text('l');
 	font-style: italic;
 }
@@ -130,7 +130,7 @@ ins {
 del {
 	@include bg('red');
 	@include p('h', 'xs');
-	text-decoration: none;
+	text-decoration: line-through;
 
 	&[cite]:after {
 		@include m('l', 'xs');
@@ -164,7 +164,7 @@ a {
 mark {
 	@include p('h', 'xs');
 	@include bg('green');
-	@include clr('black-lighter');
+	@include clr('black');
 }
 
 time {
@@ -189,14 +189,14 @@ time {
 	max-width: 590px;
 	//centers the max width items
 	.t-c & {
-		@extend .c !optional;
+		text-align: center;
 	}
 }
 
 .faded {
-	@include clr('black-lightest');
+	@include clr('grey');
 
 	& mark {
-		@include bg('green-lightest');
+		@include bg('green');
 	}
 }

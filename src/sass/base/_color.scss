@@ -1,22 +1,28 @@
 @each $name, $color in $colors {
-	.bg--#{$name} {
-		background-color: $color;
-		&-i {
-			color: $color !important;
-		}
-	}
+  .bg--#{$name} {
+    background-color: $color;
+    @each $name, $shade in $shades {
+      &--#{$name} {
+        background-color: darken($color, $shade);
+      }
+    }
+  }
 
-	.clr--#{$name} {
-		color: $color;
-		&-i {
-			color: $color !important;
-		}
-	}
+  .clr--#{$name} {
+    color: $color;
+    @each $name, $shade in $shades {
+      &--#{$name} {
+        color: darken($color, $shade);
+      }
+    }
+  }
 
-	.bdr--#{name} {
-		border: 1px solid #{$color};
-		&-i {
-			border: 1px solid #{color}!important;
-		}
-	}
+  .bdr--#{$name} {
+    border: 1px solid #{$color};
+    @each $name, $shade in $shades {
+      &--#{$name} {
+        border: 1px solid darken($color, $shade);
+      }
+    }
+  }
 }

@@ -15,7 +15,7 @@
     "deploy:img": "npm run build:img",
     "deploy:font": "rm -rf dist/asset/fonts/* && cp -r src/fonts/* dist/assets/fonts",
     "live-reload": "./node_modules/.bin/webpack-dev-server --content-base './dist'",
-    "watch": "parallelshell 'npm run -s build:js -- -w' 'npm run -s build:css -- -w' 'npm run ./node_modules/.bin/live-reload'",
+    "watch": "./node_modules/.bin/parallelshell 'npm run -s build:js -- -w' 'npm run -s build:css -- -w'",
     "build": "npm run -s build:js && npm run -s build:css && npm run -s build:img && npm run -s build:font",
     "purge": "rm -rf dist/assets",
     "deploy": "npm run -s deploy:css && npm run -s deploy:js && npm run -s deploy:img && npm run -s deploy:font"
@@ -23,12 +23,21 @@
   "author": "Gyunu",
   "license": "MIT",
   "dependencies": {
+    "fs": "0.0.1-security",
     "imagemin-cli": "^3.0.0",
+    "jquery": "^3.1.1",
+    "json-loader": "^0.5.4",
+    "live-reload": "^1.1.0",
+    "mapbox-gl": "^0.28.0",
     "node-sass": "^3.10.1",
+    "rivets": "^0.9.6",
+    "slick-carousel": "^1.6.0",
     "ts-loader": "^0.8.2",
     "tslint": "^3.15.1",
     "typescript": "^1.8.10",
-    "webpack": "^1.13.0"
+    "typings": "^2.0.0",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.16.2"
   },
   "devDependencies": {
     "parallelshell": "^2.0.0",

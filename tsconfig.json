@@ -17,6 +17,27 @@
     "rewriteTsconfig": true
   },
   "files": [
-    "./src/ts/index.ts"
+    "./src/ts/base/ajax.ts",
+    "./src/ts/base/controller.ts",
+    "./src/ts/base/grabbable.ts",
+    "./src/ts/base/interface/IDictionary.ts",
+    "./src/ts/base/modal.ts",
+    "./src/ts/base/popup.ts",
+    "./src/ts/base/queryString.ts",
+    "./src/ts/config.ts",
+    "./src/ts/controllers/articleListController.ts",
+    "./src/ts/controllers/carouselController.ts",
+    "./src/ts/controllers/educationListController.ts",
+    "./src/ts/controllers/heroController.ts",
+    "./src/ts/controllers/interfaces/IContollerArgs.ts",
+    "./src/ts/controllers/mapController.ts",
+    "./src/ts/controllers/projectListController.ts",
+    "./src/ts/controllers/textController.ts",
+    "./src/ts/controllers/workListController.ts",
+    "./src/ts/index.ts",
+    "./src/ts/lang/en.lang.ts",
+    "./src/ts/lang/index.ts",
+    "./src/ts/modules/interfaces/IMapSettings.ts",
+    "./src/ts/modules/map.ts"
   ]
 }

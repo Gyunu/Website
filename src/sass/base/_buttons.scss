@@ -1,70 +1,79 @@
+a.btn {
+  //anchor tags need a line height.
+  line-height: 1.7;
+}
+
 .btn {
-	@include p('v', 'm');
-	@include p('h', 'l');
-	@include m('b', 'xl');
-	@include bg('black-lighter');
-	@include clr('white');
-	@include bdr('n', 'transparent');
-	height         : 60px;
-	display        : inline-block;
-	line-height    : 2;
-	vertical-align : middle;
-	text-decoration: none;
+  @include p('v', 'xs');
+  @include p('h', 'm');
+  @include m('b', 'xl');
+  @include bg('black');
+  @include clr('white');
+  @include bdr('n', 'transparent');
+  @include rad('u', 'xs');
+  @include text('m');
+  display: inline-block;
+  height: 40px;
+  line-height: 0;
+  text-decoration: none;
+  vertical-align: middle;
 
-	&:before {
-		@include m('u', 'n');
-		width  : 0;
-		content: '';
-	}
+  p {
+    @include m('u', 'n');
+    @include d('ib');
+    line-height: 1.7;
+  }
 
-	&:hover {
-		@include bg('black');
-	}
+  &::before {
+    @include m('u', 'n');
+    content: '';
+    width: 0;
+  }
 
-	.ion {
-		@include m('r', 'm');
-	}
+  &:hover {
+    @include bg('white');
+    @include clr('black');
+  }
 
-	&--outline {
-		@include bg('none');
-		@include clr('white');
-		@include bdr('u', 'white');
+  .ion {
+    @include m('r', 's');
+  }
 
-		&:hover {
-			@include bg('white');
-			@include clr('black');
-		}
-	}
+  &--outline {
+    @include bg('none');
+    @include clr('white');
+    @include bdr('u', 'white');
 
-	&--inverse {
-		@include bg('white');
-		@include clr('black');
-		@include bdr('u', 'none');
+    &:hover {
+      @include bg('white');
+      @include clr('black');
+    }
+  }
 
-		&:hover {
-			@include bg('black');
-			@include clr('white');
-		}
-	}
+  &--inverse {
+    @include bg('white');
+    @include clr('black');
+    @include bdr('u', 'black');
 
-	&--light {
-		@include bg('white');
-		@include clr('black');
+    &:hover {
+      @include bg('black');
+      @include clr('white');
+      @include bdr('u', 'white');
+    }
+  }
 
-		&:hover {
-			@include bg('black');
-			@include clr('white');
-		}
+  @each $name, $color in $colors {
+    &--#{$name} {
+      @include clr('white');
+      @include bdr('u', 'none');
+      @include bg($name);
 
-		&.btn--inverse {
-			@include bg('black');
-			@include clr('white');
-			@include bdr('u', 'white');
 
-			&:hover {
-				@include bg('white');
-				@include clr('black');
-			}
-		}
-	}
+      &:hover {
+        @include bg($name, 1, 'dark');
+        @include bdr('u', 'none');
+        @include clr('white');
+      }
+    }
+  }
 }

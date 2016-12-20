@@ -1,0 +1,43 @@
+.info {
+  @include p('v', 'm');
+  @include p('h', 'l');
+  @include clr('white');
+  @include d('b');
+
+  @each $name, $color in $colors {
+    &--#{$name} {
+      @include bg($name, 0.5, 'normal');
+    }
+  }
+
+  .ion {
+    @include d('ib');
+    @include m('r', 'm');
+    @include text('m');
+    vertical-align: top;
+  }
+
+  h1 {
+    @include text('m');
+    @include m('u', 'n');
+    @include d('ib');
+    @include m('r', 'l');
+  }
+
+  p {
+    @include d('b');
+    @include m('u', 'n');
+  }
+
+  &__text {
+    @include d('ib');
+  }
+
+  .close {
+    float: right;
+    cursor: pointer;
+    @include m('u', 'n');
+    @include m('t', 'xxs');
+
+  }
+}

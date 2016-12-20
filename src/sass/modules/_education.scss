@@ -1,0 +1,31 @@
+.education {
+
+  @include bdr('b', 'grey');
+  @include p('v', 'xl');
+  @include m('b', 's');
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+
+  &__container {
+    @include p('h', 'xl');
+    @include p('b', 'xxxl');
+    @include bdr('b', 'grey');
+    &.loaded {
+      .education {
+        @include transition('opacity', 'slow');
+        opacity: 1;
+      }
+    }
+  }
+
+  &__meta {
+    @include clr('blue');
+    @include m('b', 'l');
+
+    span {
+      @include d('ib');
+    }
+  }
+
+}

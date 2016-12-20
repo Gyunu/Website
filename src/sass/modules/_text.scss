@@ -1,0 +1,18 @@
+.text {
+  @include m('b', 's');
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+
+  &__container {
+    @include p('h', 'xl');
+    @include p('b', 'xxxl');
+    @include bdr('b', 'grey');
+    &.loaded {
+      .text {
+        @include transition('opacity', 'slow');
+        opacity: 1;
+      }
+    }
+  }
+}

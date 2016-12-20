@@ -3,7 +3,7 @@
 /**
  * Converts the field value to valid html
  * @param Field $field The calling Kirby Field instance
- * @param boolean $keepTags Don't touch valid html tags 
+ * @param boolean $keepTags Don't touch valid html tags
  * @return Field
  */
 field::$methods['html'] = field::$methods['h'] = function($field, $keepTags = true) {
@@ -86,7 +86,7 @@ field::$methods['upper'] = function($field) {
 };
 
 /**
- * Applies the widont rule to avoid single 
+ * Applies the widont rule to avoid single
  * words on the last line
  * @param Field $field The calling Kirby Field instance
  * @return Field
@@ -235,7 +235,7 @@ field::$methods['bool'] = field::$methods['isTrue'] = function($field, $default 
 
 /**
  * Checks if the field content is false
- * @param Field $field The calling Kirby Field instance 
+ * @param Field $field The calling Kirby Field instance
  * @return boolean
  */
 field::$methods['isFalse'] = function($field) {
@@ -252,7 +252,7 @@ field::$methods['isFalse'] = function($field) {
 field::$methods['int'] = function($field, $default = 0) {
   $val = $field->empty() ? $default : $field->value;
   return intval($val);
-}; 
+};
 
 /**
  * Get a float value for the Field
@@ -271,13 +271,13 @@ field::$methods['toStructure'] = field::$methods['structure'] = function($field)
 
 field::$methods['link'] = function($field, $attr1 = array(), $attr2 = array()) {
   $a = new Brick('a', $field->value());
-    
+
   if(is_string($attr1)) {
     $a->attr('href', url($attr1));
-    $a->attr($attr2);    
+    $a->attr($attr2);
   } else {
     $a->attr('href', $field->page()->url());
-    $a->attr($attr1);    
+    $a->attr($attr1);
   }
 
   return $a;
@@ -286,4 +286,46 @@ field::$methods['link'] = function($field, $attr1 = array(), $attr2 = array()) {
 
 field::$methods['toUrl'] = field::$methods['url'] = function($field) {
   return url($field->value());
+};
+
+pages::$methods['toJsonWithFiles'] = function($pages) {
+
+  $json = [];
+
+  foreach($pages as $page) {
+    $p = $page->toArray();
+    $files = $page->files()->toArray();
+
+    $p['files'] = $files;
+
+    $json[] = $p;
+  }
+
+  return json_encode($json);
+};
+
+pages::$methods['toArrayWithFiles'] = function($pages) {
+
+  $array = [];
+
+  foreach($pages as $page) {
+    $p = $page->toArray();
+    $files = $page->files();
+
+    foreach($files as $file) {
+      $f = [];
+
+      $f['original'] = $file->toArray();
+      $f['resized']['small'] = thumb($file, ['width' => 200])->url();
+      $f['resized']['medium'] = thumb($file, ['width' => 500])->url();
+      $f['resized']['large'] = thumb($file, ['width' => 800])->url();
+      $p['files'][] = $f;
+    }
+
+    $array[] = $p;
+  }
+
+
+
+  return $array;
 };

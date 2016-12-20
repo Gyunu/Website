@@ -1,6 +1,6 @@
 .logo {
 	@include m('b', 'xl');
-	display  : block;
+	@include d('n');
 	min-width: 125px;
 
 	img {
@@ -38,17 +38,17 @@
 
 		.menu {
 			@include m('t', 'xxxl');
-			@extend .block;
+			@include d('b');
 			clear: both;
 			&__link {
 				@include clr('white');
 				@include p('u', 's');
 				@include bdr('u', 'none');
-				@extend .block;
+				@include d('b');
 
 				text-decoration: none;
 				&:before {
-					display: none;
+					@include d('n');
 				}
 				&:hover {
 					@include bdr('u', 'grey');

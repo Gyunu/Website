@@ -1,0 +1,123 @@
+@each $name, $color in $colors {
+  @keyframes ani-attn--#{$name} {
+    0% {
+      box-shadow: 0 0 0 0 rgba($color, .5);
+    }
+
+    30% {
+  		box-shadow: 0 0 10px 5px rgba($color, .0);
+    }
+
+  	31% {
+      box-shadow: 0 0 0 0 rgba($color, .5);
+    }
+
+    61% {
+  		box-shadow: 0 0 10px 5px rgba($color, .0);
+    }
+
+  	100% {
+  		box-shadow: 0 0 10px 5px rgba($color, .0);
+  	}
+  }
+
+  @keyframes ani-flash--#{$name} {
+    0% {
+      background-color: rgba($color, 0);
+    }
+
+    10% {
+      background-color: rgba($color, 0.3);
+    }
+
+    60% {
+      background-color: rgba($color, 0.3);
+    }
+
+
+    100% {
+      background-color: rgba($color, 0);
+    }
+  }
+
+  .attn-flash--#{$name} {
+    animation-duration: 4s;
+    animation-name: ani-flash--#{$name};
+    animation-iteration-count: 1;
+    animation-direction: normal;
+  }
+
+  .attn-glow--#{$name} {
+    animation-duration: 2.5s;
+		animation-name: ani-attn--#{$name};
+		animation-iteration-count: infinite;
+		animation-direction: normal;
+  }
+
+  .attn-outl--#{$name} {
+    border: 1px solid rgba($color, 0.6);
+    margin-top: -1px;
+    margin-left: -1px;
+  }
+
+  .attn-hl--#{$name} {
+    background: rgba($color, 0.3);
+  }
+}
+
+@keyframes ani-shake {
+  50% {
+    left: -3px;
+  }
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 3px;
+  }
+}
+
+@each $name, $timing in $timings {
+  .attn-shake--#{$name} {
+    animation-duration: #{$timing}ms;
+    animation-name: ani-shake;
+    animation-iteration-count: 4;
+    animation-direction: normal;
+    position: relative;
+  }
+}
+
+@keyframes ani-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  @include d('b');
+  @include text('l');
+  @include clr('grey');
+  top: 45%;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  //make sure it's always visible.
+  opacity: 1!important;
+  &__icon {
+    @include m('u', 'n');
+    @include p('u', 'n');
+    line-height: 0;
+    animation-name: ani-rotate;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    position: relative;
+    height: 19px;
+    width: 20px;
+    opacity: 1!important;
+  }
+}

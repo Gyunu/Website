@@ -18,21 +18,21 @@
 /// @todo Fix this to use the $positions map
 /// @todo rename this function
 @function positions($type, $position) {
-		$positions: (
-			't': #{$type}-top,
-			'b': #{$type}-bottom,
-			'l': #{$type}-left,
-			'r': #{$type}-right,
-			'u': #{$type},
-			'h': (
-				'1': #{$type}-left,
-				'2': #{$type}-right
-			),
-			'v': (
-				'1': #{$type}-top,
-				'2': #{$type}-bottom
-			),
-			'n': #{$type}
-		);
-		@return map-get($positions, $position);
+  $positions: (
+    't': #{$type}-top,
+    'b': #{$type}-bottom,
+    'l': #{$type}-left,
+    'r': #{$type}-right,
+    'u': #{$type},
+    'h': (
+      '1': #{$type}-left,
+      '2': #{$type}-right
+    ),
+    'v': (
+      '1': #{$type}-top,
+      '2': #{$type}-bottom
+    ),
+    'n': #{$type}
+  );
+  @return map-get($positions, $position);
 }

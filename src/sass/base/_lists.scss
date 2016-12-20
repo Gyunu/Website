@@ -1,102 +1,99 @@
 ol {
-	@include m('t', 'n');
-	@include m('b', 'l');
-	@include p('u', 'n');
-	list-style   : none;
-	counter-reset: ol;
+  @include m('t', 'n');
+  @include m('b', 'l');
+  @include p('u', 'n');
+  counter-reset: ol;
+  list-style: none;
 
-	&.roman li {
-		&:before {
-			content          : counter(ol, upper-roman);
-			counter-increment: ol;
-		}
-	}
 
-	&.katakana li {
-		&:before {
-			content          : counter(ol, katakana);
-			counter-increment: ol;
-		}
-	}
+  &.roman li {
+    &::before {
+      content: counter(ol, upper-roman);
+      counter-increment: ol;
+    }
+  }
 
-	&.hiragana li {
-		&:before {
-			content          : counter(ol, hiragana);
-			counter-increment: ol;
-		}
-	}
+  &.katakana li {
+    &::before {
+      content: counter(ol, katakana);
+      counter-increment: ol;
+    }
+  }
 
-	&.kanji li {
-		&:before {
-			content          : counter(ol, cjk-ideographic);
-			counter-increment: ol;
-		}
-	}
+  &.hiragana li {
+    &::before {
+      content: counter(ol, hiragana);
+      counter-increment: ol;
+    }
+  }
 
-	li {
-		@include m('v', 's');
-		list-style-position: inside;
+  &.kanji li {
+    &::before {
+      content: counter(ol, cjk-ideographic);
+      counter-increment: ol;
+    }
+  }
 
-		&:before {
-			@include m('r', 'm');
-			@extend .inline-block !optional;
-			content          : counter(ol, decimal);
-			counter-increment: ol;
-			min-width        : 20px;
-			font-weight      : 700;
-		}
-	}
+  li {
+    @include m('v', 's');
+    list-style-position: inside;
+
+    &::before {
+      @include d('ib');
+      @include m('r', 'm');
+
+      content: counter(ol, decimal);
+      counter-increment: ol;
+      font-weight: 700;
+      min-width: 20px;
+
+    }
+  }
 }
 
 ul {
-	@include m('t', 'n');
-	@include m('b', 'l');
-	@include p('u', 'n');
-	list-style   : none;
-	counter-reset: ul;
+  @include m('t', 'n');
+  @include m('b', 'l');
+  @include p('u', 'n');
+  counter-reset: ul;
+  list-style: none;
 
-	li {
-		@include m('v', 's');
-		list-style-position: inside;
+  li {
+    @include m('v', 's');
+    list-style-position: inside;
 
-		&:before {
-			@include m('r', 'm');
-			@extend .inline-block !optional;
-			content          : counter(ul, disc);
-			counter-increment: ul;
-			min-width        : 20px;
-			font-weight      : 700;
-		}
-	}
+    &::before {
+      @include d('ib');
+      @include m('r', 'm');
+      content: counter(ul, disc);
+      counter-increment: ul;
+      font-weight: 700;
+      min-width: 20px;
+    }
+  }
 }
 
 dl {
-	@include m('t', 'n');
-	@include m('b', 'l');
-	@include p('u', 'n');
+  @include m('t', 'n');
+  @include m('b', 'l');
+  @include p('u', 'n');
 
-	dt {
-		@include m('v', 's');
-		font-weight: 700;
-		@extend .inline-block !optional;
-	}
+  dt {
+    @include d('ib');
+    @include m('v', 's');
 
-	dd + dt dd + dt {
-		@include m('t', 'l');
-		@extend .block !optional;
-	}
+    font-weight: 700;
 
-	dt + dt {
-		@extend .inline-block !optional;
+  }
 
-		&:after {
-			content: ',';
-		}
-	}
+  dd + dt dd + dt {
+    @include d('b');
+    @include m('t', 'l');
+  }
 
-	dd {
-		@include m('l', 'n');
-		@include m('m', 't');
-		@include m('b', 's');
-	}
+  dd {
+    @include m('l', 'n');
+    @include m('m', 't');
+    @include m('b', 's');
+  }
 }

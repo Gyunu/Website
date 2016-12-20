@@ -1,63 +1,210 @@
 .navigation {
+
 	@include bg('black');
 	@include clr('white');
-	@include col($columns);
-	@include bdr('b', 'black-lighter');
-	position: fixed;
-	top: 0;
-	left: 0;
-	&__logo {
-		@include m('b', 'n');
-		@include p('u', 'n');
-		img {
-			@include p('u', 's');
+	@include p('u', 'xl');
+	height: 100vh;
+
+	&__map {
+		@include m('b', 'xl');
+		@include p('l', 'n');
+		@include bg('black', 1, 'darker');
+
+		height: 500px;
+
+		a {
+			&:before {
+				@include d('n');
+			}
 		}
-		h1 {
-			@include text('l');
-			@include m('t', 's');
+
+		&.loading {
+			* {
+				opacity: 0;
+			}
 		}
-		@include media('xs') {
-			display: none;
-		};
-		@include media('s') {
-			display: block;
-		};
+
+		&.loaded {
+			* {
+				@include transition('opacity', 'slow');
+			}
+		}
 	}
 
-	&__list {
-		@include m('u', 'n');
-		@include p('u', 'n');
+	&__actions-container {
+		@include m('b', 'l');
 	}
 
-	&__page {
-		@include p('t', 'l');
-		@include p('b', 'm');
-		@include p('h', 'xl');
-		@include m('u', 'n');
+	&__button {
+		@include p('v', 'm');
+		@include p('h', 'l');
+		@include bg('black');
+		@include bdr('u', 'none');
 		@include clr('white');
-
-		list-style-type: none;
-		float: left;
+		@include layer(10);
+		position: fixed;
+		top: 0;
 
 		&:before {
-			display: none;
-			content: '';
-			width: 0;
-			min-width: 0;
-			@include m('u', 'n');
+			@include text('l');
 		}
 
-		&:hover {
-			@include bg('white');
-			@include clr('black');
+		&:focus, &:active {
+			@include bg('black', 1, 'darker');
+			outline: none;
 		}
 
+		span {
+			@include d('b');
+		}
+	}
+
+	&__items {
+		@include d('b');
+		@include m('b', 'n');
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	&__item {
+		@include d('ib');
+		@include m('h', 'm');
+		@include m('t', 'n');
+		&:before {
+			@include d('n');
+		}
+		&:first-of-type {
+			@include m('l', 'n');
+		}
+		&:last-of-type {
+			@include m('r', 'n');
+		}
 	}
 
 	&__link {
-		color: inherit;
+		@include m('b', 'n');
 		&:before {
-			display: none;
+			@include d('n');
+		}
+	}
+
+	&__search {
+		input {
+			@include m('u', 'n');
 		}
 	}
 }
+
+.map {
+
+	&__detail-container {
+		height: 500px;
+		@include bg('black', 1, 'dark');
+		&.loading {
+			* {
+				opacity: 0;
+			}
+		}
+
+		&.loaded {
+			* {
+				@include transition('opacity', 'slow');
+			}
+		}
+	}
+
+	&__detail {
+		@include p('r', 'n');
+		@include p('v', 'xl');
+		height: 270px;
+	}
+
+	&__places {
+
+	}
+
+	&__places-container {
+		height: 150px;
+		overflow-y: scroll;
+	}
+
+	&__country-container {
+		@include m('b', 's');
+	}
+
+	&__city-container {
+		@include d('n');
+
+		&.show {
+			@include d('b');
+		}
+	}
+
+	&__country-label {
+		@include d('b');
+		@include m('u', 'n');
+		@include text('m');
+		cursor: pointer;
+		text-transform: capitalize;
+
+		span {
+			@include text('s');
+		}
+	}
+
+	&__city-label {
+		@include m('u', 'n');
+		@include m('t', 's');
+		@include d('ib');
+		@include m('r', 'm');
+		@include text('m');
+		@include font('light');
+		cursor: pointer;
+
+	}
+
+	&__images-container {
+		@include m('t', 's');
+		@include bg('black', 1, 'dark');
+		position: relative;
+	}
+
+	&__images-button {
+		@include bg('black', .8)
+		@include layer(100);
+		position: absolute;
+		width: 50px;
+		height: 120px;
+		top: 0;
+		cursor: pointer;
+
+		&:before {
+			top: 50px;
+			position: relative;
+			left: 20px;
+		}
+
+		&--prev {
+			left: 0;
+			right: auto;
+		}
+
+		&--next {
+			right: 0;
+			left: auto;
+		}
+	}
+
+	&__images {
+		overflow: hidden;
+	}
+
+	&__image {
+		@include p('h', 'xs');
+		width: 200px;
+	}
+}
+
+// .mapboxgl-control-container {
+// 	@include d('n');
+// }

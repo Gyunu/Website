@@ -1,0 +1,8 @@
+{
+  "globalDependencies": {
+    "geojson": "registry:dt/geojson#0.0.0+20160619034323",
+    "jquery": "registry:dt/jquery#1.10.0+20160929162922",
+    "mapbox-gl": "github:dobrud/typed-mapbox-gl",
+    "slick-carousel": "registry:dt/slick-carousel#1.6.0+20161014140200"
+  }
+}

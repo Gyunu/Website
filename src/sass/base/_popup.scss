@@ -1,0 +1,72 @@
+.popup {
+  @include p('v', 'm');
+  @include p('h', 'l');
+  @include clr('white');
+  @include rad('u', 's');
+  @include m('b', 's');
+  @include transition('top', 'fast');
+  top: -30vw;
+  position: relative;
+
+  &.on {
+    @include transition('top', 'fast');
+    top: 0;
+  }
+
+  cursor: pointer;
+
+  &__container {
+    @include layer(100);
+    @include col($columns / 2);
+    @include d('n');
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    right: 0;
+    top: 30px;
+    pointer-events: none;
+    &.on {
+      @include d('b')
+    }
+  }
+
+  @each $name, $color in $colors {
+    &--#{$name} {
+      @include bg($name);
+      &:hover {
+        @include bg($name, 1, 'dark');
+      }
+    }
+  }
+
+  .ion {
+    @include d('ib');
+    @include m('r', 'm');
+    @include text('m');
+  }
+
+  h1 {
+    @include text('m');
+    @include m('u', 'n');
+    @include d('ib');
+    @include m('r', 'l');
+  }
+
+  p {
+    @include d('ib');
+    @include m('u', 'n');
+  }
+
+  &__text {
+    @include d('ib');
+  }
+
+  .close {
+    float: right;
+    cursor: pointer;
+    @include m('u', 'n');
+    @include m('t', 'xxs');
+
+  }
+}
